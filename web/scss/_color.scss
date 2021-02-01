@@ -1,0 +1,22 @@
+$lightgray: #F2F2F2;
+$lightgreen: #73c259;
+$darkgreen: #00B242;
+html {
+    background-color: $lightgreen;
+}
+
+a {
+    color: $darkgreen;
+}
+
+form {
+    background-color: white;
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        background-color: $lightgray;
+    }
+    input[type="submit"] {
+        background-color: $darkgreen;
+    }
+}

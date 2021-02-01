@@ -1,0 +1,6 @@
+<?php
+/*
+*Accounts model
+*/
+
+?>
