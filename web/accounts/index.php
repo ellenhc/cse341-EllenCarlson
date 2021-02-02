@@ -34,7 +34,7 @@ switch ($action) {
             exit;
         }
         //TEMP SETTING HOUSEHOLD ID TO ZERO
-        $householdId = 0;
+        $householdId = 1;
 
         // Send the data to the model
         $regOutcome = registerUser($userFirstName, $userLastName, $userEmail, $userPassword, $householdId);

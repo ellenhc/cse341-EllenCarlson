@@ -46,3 +46,5 @@ CREATE TABLE budgets (
     categoryId int REFERENCES categories NOT NULL,
     householdId int REFERENCES households NOT NULL
 );
+
+INSERT INTO households (householdName) VALUES ('Carlson');
