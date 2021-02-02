@@ -1,12 +1,17 @@
 $lightgray: #F2F2F2;
+$medgray: #8F8F8F;
 $lightgreen: #73c259;
 $darkgreen: #00B242;
+$darkergreen: #008F34;
 html {
     background-color: $lightgreen;
 }
 
 a {
     color: $darkgreen;
+    &:hover {
+        color: $darkergreen;
+    }
 }
 
 form {
@@ -17,6 +22,14 @@ form {
         background-color: $lightgray;
     }
     input[type="submit"] {
+        color: white;
         background-color: $darkgreen;
+        &:hover {
+            background-color: $darkergreen;
+        }
     }
+}
+
+.message {
+    color: $medgray;
 }

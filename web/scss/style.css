@@ -6,6 +6,10 @@ a {
   color: #00B242;
 }
 
+a:hover {
+  color: #008F34;
+}
+
 form {
   background-color: white;
 }
@@ -17,12 +21,38 @@ form input[type="text"] {
 }
 
 form input[type="submit"] {
+  color: white;
   background-color: #00B242;
+}
+
+form input[type="submit"]:hover {
+  background-color: #008F34;
+}
+
+.message {
+  color: #8F8F8F;
 }
 
 form {
   padding: 1rem;
   margin: auto;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+  body {
+    width: 70%;
+    margin: auto;
+  }
+  .login-form {
+    width: 50%;
+  }
 }
 
 * {
@@ -45,7 +75,15 @@ img {
   height: auto;
 }
 
-input[type="submit"] {
+input {
   border: none;
+}
+
+form .message {
+  text-align: center;
+}
+
+input[type="submit"] {
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */
