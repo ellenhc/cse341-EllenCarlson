@@ -1,5 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather&display=swap');
 @import "color";
 @import "forms";
 @import "large";
 @import "reset";
 @import "typography";
+.header-container {
+    ul {
+        display: flex;
+    }
+    li {
+        border-bottom: 2px solid transparent;
+        margin-right: 1rem;
+    }
+}
+
+button {
+    padding: 10px 24px;
+    border-radius: 4px;
+}
+
+.home-div {
+    padding: 1rem 0;
+    h1 {
+        margin-bottom: 1rem;
+    }
+    button {
+        margin-top: 2rem;
+    }
+}
+
+.banner,
+.sec-div {
+    padding: 1.5rem 0;
+}
+
+footer {
+    padding: 1rem;
+}

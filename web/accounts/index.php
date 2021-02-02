@@ -42,7 +42,7 @@ switch ($action) {
         if ($regOutcome === 1) {
             setcookie('firstname', $userFirstName, strtotime('+1 year'), '/');
             $_SESSION['message'] = "Thanks for registering $userFirstName. Please use your email and password to login.";
-            header('Location: /phpmotors/accounts/?action=login');
+            header('Location: /accounts/?action=login');
             exit;
         } else {
             $message = "<p class='notice'>Sorry $userFirstName, but the registration failed. Please try again.</p>";
@@ -57,7 +57,7 @@ switch ($action) {
         include '../view/login.php';
         break;
     case 'register':
-        include '../view/registration.php';
+        include '../view/register.php';
         break;
     default:
         include '../view/500.php';

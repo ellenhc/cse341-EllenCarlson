@@ -1,13 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather&display=swap");
 html {
-  background-color: #73c259;
+  background-color: #E6F3E2;
 }
 
-a {
-  color: #00B242;
+.header-container li:hover {
+  border-color: #4F9537;
 }
 
-a:hover {
-  color: #008F34;
+.home-div,
+.sec-div {
+  background-color: #f9f9f9;
+}
+
+.banner {
+  background-color: #CDE7C5;
 }
 
 form {
@@ -20,13 +26,23 @@ form input[type="text"] {
   background-color: #F2F2F2;
 }
 
-form input[type="submit"] {
-  color: white;
-  background-color: #00B242;
+form a {
+  color: #5EB342;
 }
 
-form input[type="submit"]:hover {
-  background-color: #008F34;
+form a:hover {
+  color: #4F9537;
+}
+
+input[type="submit"],
+button {
+  color: white;
+  background-color: #73c259;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #5EB342;
 }
 
 .message {
@@ -36,6 +52,7 @@ form input[type="submit"]:hover {
 form {
   padding: 1rem;
   margin: auto;
+  border-radius: 4px;
 }
 
 form input {
@@ -43,15 +60,34 @@ form input {
   width: 100%;
   padding: 1rem;
   margin-bottom: 1rem;
+  border-radius: 4px;
 }
 
 @media screen and (min-width: 992px) {
-  body {
-    width: 70%;
+  .header-content,
+  .home-content,
+  .banner-content,
+  .sec-content,
+  .footer-content,
+  form {
+    width: 60%;
     margin: auto;
   }
-  .login-form {
-    width: 50%;
+  .home-content {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .card-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
   }
 }
 
@@ -68,6 +104,7 @@ ul li {
 
 a {
   text-decoration: none;
+  color: black;
 }
 
 img {
@@ -75,15 +112,89 @@ img {
   height: auto;
 }
 
-input {
+input,
+button {
   border: none;
+}
+
+.header-container li {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+}
+
+form h1 {
+  text-align: center;
 }
 
 form .message {
   text-align: center;
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
   text-transform: uppercase;
+}
+
+.sec-content {
+  text-align: center;
+}
+
+.card img {
+  margin-top: 1.5rem;
+}
+
+.card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.header-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-container li {
+  border-bottom: 2px solid transparent;
+  margin-right: 1rem;
+}
+
+button {
+  padding: 10px 24px;
+  border-radius: 4px;
+}
+
+.home-div {
+  padding: 1rem 0;
+}
+
+.home-div h1 {
+  margin-bottom: 1rem;
+}
+
+.home-div button {
+  margin-top: 2rem;
+}
+
+.banner,
+.sec-div {
+  padding: 1.5rem 0;
+}
+
+footer {
+  padding: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

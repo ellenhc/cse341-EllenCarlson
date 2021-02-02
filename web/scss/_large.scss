@@ -1,9 +1,21 @@
 @media screen and (min-width: 992px) {
-    body {
-        width: 70%;
+    .header-content,
+    .home-content,
+    .banner-content,
+    .sec-content,
+    .footer-content,
+    form {
+        width: 60%;
         margin: auto;
     }
-    .login-form {
-        width: 50%;
+    .home-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+    .card-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 1rem;
     }
 }

@@ -5,6 +5,7 @@
     <title>Login | BudgetTracker</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/scss/style.css">
 </head>
 
@@ -20,6 +21,7 @@
         }
         ?>
         <form action="/accounts/index.php" method="post" class="register-form">
+            <h1>Create an account</h1>
             <label for="fname">First name</label>
             <input type="text" id="fname" name="userFirstName" required>
             <label for="lname">Last name</label>

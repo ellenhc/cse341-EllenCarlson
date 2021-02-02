@@ -1,9 +1,47 @@
+.header-container {
+    li {
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+}
+
 form {
+    h1 {
+        text-align: center;
+    }
     .message {
         text-align: center;
     }
 }
 
-input[type="submit"] {
+input[type="submit"],
+button {
     text-transform: uppercase;
+}
+
+.sec-content {
+    text-align: center;
+}
+
+.card {
+    img {
+        margin-top: 1.5rem;
+    }
+    h4 {
+        margin-bottom: 0.5rem;
+    }
 }
