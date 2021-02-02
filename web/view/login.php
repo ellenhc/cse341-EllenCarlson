@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
+    </header>
     <main>
         <?php
         //Shows any messages that may need to be displayed. isset fxn tests the variable that is included as a parameter and returns T if the variable exists and has value other than
@@ -27,7 +29,9 @@
             <p class="message">Not registered? <a href="#">Create an account</a></p>
         </form>
     </main>
-    <footer></footer>
+    <footer>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/footer.php'; ?>
+    </footer>
 </body>
 
 </html>

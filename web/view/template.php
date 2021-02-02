@@ -9,10 +9,14 @@
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
+    </header>
     <main>
     </main>
-    <footer></footer>
+    <footer>
+        <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/footer.php'; ?>
+    </footer>
 </body>
 
 </html>
