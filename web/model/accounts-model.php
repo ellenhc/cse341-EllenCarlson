@@ -3,9 +3,9 @@
 *Accounts model
 */
 // Function to register a new user
-function registerUser($userFirstName, $userLastName, $userEmail, $userPassword){
+function registerUser($userFirstName, $userLastName, $userEmail, $userPassword, $householdId){
     $db = databaseConnect();
-    $sql = 'INSERT INTO users (userFirstName, userLastName, userEmail, userPassword) VALUES (:userFirstName, :userLastName, :userEmail, :userPassword)';
+    $sql = 'INSERT INTO users (userFirstName, userLastName, userEmail, userPassword, householdId) VALUES (:userFirstName, :userLastName, :userEmail, :userPassword, :householdId)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userFirstName', $userFirstName, PDO::PARAM_STR);
     $stmt->bindValue(':userLastName', $userLastName, PDO::PARAM_STR);

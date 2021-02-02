@@ -33,9 +33,11 @@ switch ($action) {
             include '../view/login.php';
             exit;
         }
+        //TEMP SETTING HOUSEHOLD ID TO ZERO
+        $householdId = 0;
 
         // Send the data to the model
-        $regOutcome = registerUser($userFirstName, $userLastName, $userEmail, $userPassword);
+        $regOutcome = registerUser($userFirstName, $userLastName, $userEmail, $userPassword, $householdId);
 
         if ($regOutcome === 1) {
             setcookie('firstname', $userFirstName, strtotime('+1 year'), '/');
