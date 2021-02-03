@@ -15,14 +15,24 @@
     </header>
     <main>
         <form>
-            <label></label>
-            <input type="text">
-            <input type="number">
+            <label for="expensename"></label>
+            <input type="text" name="expensename" id="expensename">
+
+            <!--sort by date-->
 
             <label for="categoryid">Choose an expense category:</label>
             <?php echo $categoryList; ?>
 
-            <input type="submit">
+            <label for="userid">Sort by submitter:</label>
+            <?php echo $userList; ?>
+
+            <label for="householdname"></label>
+            <input type="text" name="householdname" id="householdname">
+
+            <input type="submit" value="Search">
+
+            <!--The action key-value pair-->
+            <input type="hidden" name="action" value="searchExpenses">
         </form>
     </main>
     <footer>

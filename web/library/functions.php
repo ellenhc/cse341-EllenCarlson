@@ -14,15 +14,12 @@ function buildCategoryList($categories){
     return $categoryList; 
 }
 
-/*$categoryList = '<select id="categoryId" name="categoryId">';
-$categoryList .= '<option value="" disabled selected hidden>Choose a category</option>';
-foreach ($categories as $category) {
-    $categoryList .= "<option value='$category[categoryId]'";
-    if(isset($categoryId)){
-        if($category['categoryId'] === $categoryId){
-            $categoryList .= ' selected ';
-        }
+function buildUserList($users){
+    $userList = '<select name="userid" id="userid">';
+    $userList .= "<option disabled selected>Sort by submitter</option>";
+    foreach($users as $user){
+        $userList .= "<option value='$user[userid]'>$user[userfirstname]</option>"; 
     }
+    $userList .= '</select>'; 
+    return $userList;
 }
-$categoryList .= ">$category[categoryName]</option>";
-$categoryList .= '</select>';*/
