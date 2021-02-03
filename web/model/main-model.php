@@ -9,7 +9,6 @@ function getCategories(){
     $stmt->execute();
     $categories = $stmt->fetchAll();
     $stmt->closeCursor();
-    print_r($categories);
     return $categories; //returns data back to the controller
 }
 ?>

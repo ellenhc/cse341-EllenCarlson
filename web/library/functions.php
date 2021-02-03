@@ -5,15 +5,10 @@ function checkEmail($clientEmail){
 }
 
 function buildCategoryList($categories){
-    $categoryList = '<select name="categoryId" id="categoryId">'; 
+    $categoryList = '<select name="categoryid" id="categoryid">'; 
     $categoryList .= "<option disabled selected>Choose a category</option>"; 
     foreach ($categories as $category) { 
-     $categoryList .= "<option value='$category[categoryId]'>$category[categoryName]</option>"; 
-     if(isset($categoryId)){
-         if($category['categoryId'] === $categoryId){
-             $categoryList .= ' selected ';
-            }
-        }
+     $categoryList .= "<option value='$category[categoryid]'>$category[categoryname]</option>"; 
     } 
     $categoryList .= '</select>'; 
     return $categoryList; 

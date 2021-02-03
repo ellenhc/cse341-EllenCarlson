@@ -19,7 +19,7 @@
             <input type="text">
             <input type="number">
 
-            <label for="categoryId">Choose an expense category:</label>
+            <label for="categoryid">Choose an expense category:</label>
             <?php echo $categoryList; ?>
 
             <input type="submit">
