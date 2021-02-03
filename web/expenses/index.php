@@ -10,7 +10,7 @@ require_once '../model/main-model.php';
 require_once '../library/functions.php';
 
 // Get categories
-$categories = getCategories();
+$categories = getCategories(); //gets data from the main model
 
 // Check for any "action" name - value pairs in the GET or POST
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);

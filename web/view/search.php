@@ -1,17 +1,3 @@
-<?php
-/*$categoryList = '<select id="categoryId" name="categoryId">';
-$categoryList .= '<option value="" disabled selected hidden>Choose a category</option>';
-foreach ($categories as $category) {
-    $categoryList .= "<option value='$category[categoryId]'";
-    if(isset($categoryId)){
-        if($category['categoryId'] === $categoryId){
-            $categoryList .= ' selected ';
-        }
-    }
-}
-$categoryList .= ">$category[categoryName]</option>";
-$categoryList .= '</select>';*/
-?>
 <!DOCTYPE html>
 <html lang="en-US">
 
