@@ -21,19 +21,18 @@ if ($action == NULL){
 
 switch ($action){
     case 'searchExpenses':
-        //NEED A WAY TO FIGURE OUT IF THESE WERE SET OR NOT. OR MAKE THEM ALL REQUIRED?
-
         // Filter and store the data
         $expensename = filter_input(INPUT_POST, 'expensename', FILTER_SANITIZE_STRING);
-        $categoryid = filter_input(INPUT_GET, 'categoryid', FILTER_SANITIZE_NUMBER_INT); 
-        $userid = filter_input(INPUT_GET, 'userid', FILTER_SANITIZE_NUMBER_INT); 
-        $householdname = filter_input(INPUT_POST, 'householdname', FILTER_SANITIZE_STRING);
-
-        $expenseArray = getExpensesByName($expensename);
+        $daterange = filter_input(INPUT_POST, 'daterange', FILTER_SANITIZE_NUMBER_INT);
+        $categoryid = filter_input(INPUT_POST, 'categoryid', FILTER_SANITIZE_NUMBER_INT); 
+        $userid = filter_input(INPUT_POST, 'userid', FILTER_SANITIZE_NUMBER_INT); 
+        
+        //Send data to the model
+        // Function in model that queries the database
+        $expenseArray = expenseSearch($expensename, $daterange, $categoryid, $userid);
         echo json_encode($expenseArray);
 
         break;
-        //SELECT * FROM expenses WHERE;
     default:
         $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
         $userList = buildUserList($users); // Calls fxn to create a select for users

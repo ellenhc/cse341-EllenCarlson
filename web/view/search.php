@@ -14,14 +14,14 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
     <main>
-        <form>
+        <form action="/expenses/index.php" method="post" class="search-form">
             <h1>Advanced Search</h1>
-            <p>Limit my search results by:</p>
+            <h3>Limit my search results by:</h3>
             <label for="expensename">Name:</label>
             <input type="text" name="expensename" id="expensename">
 
-            <label for="dates">Date Added:</label>
-            <select name="dates" id="dates">
+            <label for="daterange">Date Added:</label>
+            <select name="daterange" id="dates">
                 <option value="7">7 days</option>
                 <option value="30">30 days</option>
                 <option value="60">60 days</option>
