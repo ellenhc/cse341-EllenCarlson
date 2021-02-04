@@ -15,19 +15,25 @@
     </header>
     <main>
         <form>
-            <label for="expensename"></label>
+            <h1>Advanced Search</h1>
+            <p>Limit my search results by:</p>
+            <label for="expensename">Name:</label>
             <input type="text" name="expensename" id="expensename">
 
-            <!--sort by date-->
+            <label for="dates">Date Added:</label>
+            <select name="dates" id="dates">
+                <option value="7">7 days</option>
+                <option value="30">30 days</option>
+                <option value="60">60 days</option>
+                <option value="90">90 days</option>
+                <option value="365">1 year</option>
+            </select>
 
-            <label for="categoryid">Choose an expense category:</label>
+            <label for="categoryid">Category:</label>
             <?php echo $categoryList; ?>
 
-            <label for="userid">Sort by submitter:</label>
+            <label for="userid">Submitter:</label>
             <?php echo $userList; ?>
-
-            <label for="householdname"></label>
-            <input type="text" name="householdname" id="householdname">
 
             <input type="submit" value="Search">
 

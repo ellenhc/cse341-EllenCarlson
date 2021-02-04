@@ -6,7 +6,7 @@ function checkEmail($clientEmail){
 
 function buildCategoryList($categories){
     $categoryList = '<select name="categoryid" id="categoryid">'; 
-    $categoryList .= "<option disabled selected>Choose a category</option>"; 
+    $categoryList .= "<option selected>Any Category</option>"; 
     foreach ($categories as $category) { 
      $categoryList .= "<option value='$category[categoryid]'>$category[categoryname]</option>"; 
     } 
@@ -16,7 +16,7 @@ function buildCategoryList($categories){
 
 function buildUserList($users){
     $userList = '<select name="userid" id="userid">';
-    $userList .= "<option disabled selected>Sort by submitter</option>";
+    $userList .= "<option selected>Any Submitter</option>";
     foreach($users as $user){
         $userList .= "<option value='$user[userid]'>$user[userfirstname]</option>"; 
     }
