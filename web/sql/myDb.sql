@@ -1,23 +1,23 @@
 CREATE TABLE households (
-    householdId SERIAL PRIMARY KEY NOT NULL,
-    householdName VARCHAR(255) NOT NULL
+    "householdId" SERIAL PRIMARY KEY NOT NULL,
+    "householdName" VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE users (
-    userId SERIAL PRIMARY KEY NOT NULL,
-    userFirstName varchar(255) NOT NULL,
-    userLastName varchar(255) NOT NULL,
-    userEmail varchar(255) NOT NULL,
-    userPassword varchar(255) NOT NULL,
-    householdId int REFERENCES households NOT NULL
+    "userId" SERIAL PRIMARY KEY NOT NULL,
+    "userFirstName" varchar(255) NOT NULL,
+    "userLastName" varchar(255) NOT NULL,
+    "userEmail" varchar(255) NOT NULL,
+    "userPassword" varchar(255) NOT NULL,
+    "householdId" int REFERENCES "households" NOT NULL
 );
 
 CREATE TABLE categories (
-    categoryId SERIAL PRIMARY KEY NOT NULL,
-    categoryName varchar(255) NOT NULL
+    "categoryId" SERIAL PRIMARY KEY NOT NULL,
+    "categoryName" varchar(255) NOT NULL
 );
 
-INSERT INTO categories (categoryId, categoryName) VALUES
+INSERT INTO categories ("categoryId", "categoryName") VALUES
 (1, 'Donations'),
 (2, 'Education'),
 (3, 'Entertainment'),
@@ -30,21 +30,27 @@ INSERT INTO categories (categoryId, categoryName) VALUES
 (10, 'Transportation');
 
 CREATE TABLE expenses (
-    expenseId SERIAL PRIMARY KEY NOT NULL,
-    expenseName varchar(255) NOT NULL,
-    expensePrice money NOT NULL,
-    expenseDate date NOT NULL,
-    categoryId int REFERENCES categories NOT NULL,
-    userId int REFERENCES users NOT NULL,
-    householdId int REFERENCES households NOT NULL
+    "expenseId" SERIAL PRIMARY KEY NOT NULL,
+    "expenseName" varchar(255) NOT NULL,
+    "expensePrice" money NOT NULL,
+    "expenseDate" date NOT NULL,
+    "categoryId" int REFERENCES "categories" NOT NULL,
+    "userId" int REFERENCES "users" NOT NULL,
+    "householdId" int REFERENCES "households" NOT NULL
 );
 
 CREATE TABLE budgets (
-    budgetId SERIAL PRIMARY KEY NOT NULL,
-    budgetName varchar(255) NOT NULL,
-    budgetAmount money NOT NULL,
-    categoryId int REFERENCES categories NOT NULL,
-    householdId int REFERENCES households NOT NULL
+    "budgetId" SERIAL PRIMARY KEY NOT NULL,
+    "budgetName" varchar(255) NOT NULL,
+    "budgetAmount" money NOT NULL,
+    "categoryId" int REFERENCES "categories" NOT NULL,
+    "householdId" int REFERENCES "households" NOT NULL
 );
 
-INSERT INTO households (householdName) VALUES ('Carlson');
+INSERT INTO households ("householdName") VALUES ('Carlson');
+
+INSERT INTO users ("userFirstName", "userLastName", "userEmail", "userPassword", "householdId") VALUES ('Ellen', 'Carlson', 'ellen@finanny.com', '1234', 1);
+INSERT INTO users ("userFirstName", "userLastName", "userEmail", "userPassword", "householdId") VALUES ('Matt', 'Carlson', 'matt@finanny.com', '1234', 1);
+
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Gas', 34, '2021-02-02', 10, 1, 1);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Drywall', 71.88, '2021-01-01', 6, 2, 1);

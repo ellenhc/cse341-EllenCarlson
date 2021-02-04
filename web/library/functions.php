@@ -5,20 +5,20 @@ function checkEmail($clientEmail){
 }
 
 function buildCategoryList($categories){
-    $categoryList = '<select name="categoryid" id="categoryid">'; 
+    $categoryList = '<select name="categoryId" id="categoryId">'; 
     $categoryList .= "<option selected>Any Category</option>"; 
     foreach ($categories as $category) { 
-     $categoryList .= "<option value='$category[categoryid]'>$category[categoryname]</option>"; 
+     $categoryList .= "<option value='$category[categoryId]'>$category[categoryName]</option>"; 
     } 
     $categoryList .= '</select>'; 
     return $categoryList; 
 }
 
 function buildUserList($users){
-    $userList = '<select name="userid" id="userid">';
+    $userList = '<select name="userId" id="userId">';
     $userList .= "<option selected>Any Submitter</option>";
     foreach($users as $user){
-        $userList .= "<option value='$user[userid]'>$user[userfirstname]</option>"; 
+        $userList .= "<option value='$user[userId]'>$user[userFirstName]</option>"; 
     }
     $userList .= '</select>'; 
     return $userList;

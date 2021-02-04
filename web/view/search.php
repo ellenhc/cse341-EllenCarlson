@@ -17,8 +17,8 @@
         <form action="/expenses/index.php" method="post" class="search-form">
             <h1>Advanced Search</h1>
             <h3>Limit my search results by:</h3>
-            <label for="expensename">Name:</label>
-            <input type="text" name="expensename" id="expensename">
+            <label for="expenseName">Name:</label>
+            <input type="text" name="expenseName" id="expenseName">
 
             <label for="daterange">Date Added:</label>
             <select name="daterange" id="dates">
@@ -29,10 +29,10 @@
                 <option value="365">1 year</option>
             </select>
 
-            <label for="categoryid">Category:</label>
+            <label for="categoryId">Category:</label>
             <?php echo $categoryList; ?>
 
-            <label for="userid">Submitter:</label>
+            <label for="userId">Submitter:</label>
             <?php echo $userList; ?>
 
             <input type="submit" value="Search">

@@ -14,7 +14,7 @@ function getCategories(){
 
 function getUsers(){
     $db = databaseConnect();
-    $sql = 'SELECT userId, userfirstname, userlastname FROM users';
+    $sql = 'SELECT userId, userFirstName, userLastName FROM users';
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $users = $stmt->fetchAll();

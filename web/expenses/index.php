@@ -8,6 +8,7 @@ session_start();
 require_once '../library/connections.php';
 require_once '../model/main-model.php';
 require_once '../library/functions.php';
+require_once '../model/expenses-model.php';
 
 // Gets data from main model to populate dropdowns in the search form
 $categories = getCategories(); // gets categories 
@@ -22,14 +23,15 @@ if ($action == NULL){
 switch ($action){
     case 'searchExpenses':
         // Filter and store the data
-        $expensename = filter_input(INPUT_POST, 'expensename', FILTER_SANITIZE_STRING);
+        $expenseName = filter_input(INPUT_POST, 'expenseName', FILTER_SANITIZE_STRING);
         $daterange = filter_input(INPUT_POST, 'daterange', FILTER_SANITIZE_NUMBER_INT);
-        $categoryid = filter_input(INPUT_POST, 'categoryid', FILTER_SANITIZE_NUMBER_INT); 
-        $userid = filter_input(INPUT_POST, 'userid', FILTER_SANITIZE_NUMBER_INT); 
-        
+        $categoryId = filter_input(INPUT_POST, 'categoryId', FILTER_SANITIZE_NUMBER_INT); 
+        $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT); 
+        $householdId = 1; // TODO: get from session
+
         //Send data to the model
         // Function in model that queries the database
-        $expenseArray = expenseSearch($expensename, $daterange, $categoryid, $userid);
+        $expenseArray = expenseSearch($expenseName, $daterange, $categoryId, $userId, $householdId);
         echo json_encode($expenseArray);
 
         break;

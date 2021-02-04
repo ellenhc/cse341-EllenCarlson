@@ -1,35 +1,54 @@
 <?php
 //This is the expenses model
 
-function expenseSearch($expensename, $daterange, $categoryid, $userid){
+function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $householdId){
     $db = databaseConnect();
 
     //default statement to pull EVERYTHING for a household
-    $sql = 'SELECT * FROM expenses WHERE householdid = :householdid';
+    $sql = 'SELECT * FROM expenses WHERE householdId = :householdId';
 
-    if(!empty($expensename)){
-        $sql .= ' AND expensename LIKE :expensename';
+    if(!empty($expenseName)){
+        $sql .= ' AND expenseName LIKE :expenseName';
     }
 
-    if(!empty($daterange)){
-        $sql .= ' AND expensedate BETWEEN :value1 AND :value2';
+    if(!empty($dateRange)){
+        $sql .= ' AND expenseDate BETWEEN :startDate AND :endDate';
     }
 
-    if(!empty($categoryid)){
-        $sql .= ' AND categoryid = :categoryid';
+    if(!empty($categoryId)){
+        $sql .= ' AND categoryId = :categoryId';
     }
 
-    if(!empty($userid)){
-        $sql .= ' AND userid = :userid';
+    if(!empty($userId)){
+        $sql .= ' AND userId = :userId';
     }
 
-    echo $sql;
+    /*if(empty($hosueholdid)){
+        THROW AN ERROR IF IT IS EMPTY
+    }*/
 
-    /*$stmt = $db->prepare($sql);
-    $stmt->bindValue(':expensename', $expensename, PDO::PARAM_STR);
+    $stmt = $db->prepare($sql);
+    if(!empty($expenseName)){
+        $stmt->bindValue(':expenseName', $expenseName, PDO::PARAM_STR);
+    }
+    if(!empty($categoryId)){
+        $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
+    }
+    if(!empty($userId)){
+        $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);
+    }
+    if(!empty($dateRange)){
+        $startDate = new DateTime();
+        $endData = new DateTime();
+        $startDate->modify("-$dateRange day");
+        $stmt->bindValue(':startDate', $startDate->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+        $stmt->bindValue(':endDate', $endData->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+    }
+    $stmt->bindValue(':householdId', $householdId, PDO::PARAM_INT);
+
     $stmt->execute();
     $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
-    return $list;*/
+    return $list;
 }
 ?>
