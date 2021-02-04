@@ -5,22 +5,22 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
     $db = databaseConnect();
 
     //default statement to pull EVERYTHING for a household
-    $sql = 'SELECT * FROM expenses WHERE householdId = :householdId';
+    $sql = 'SELECT * FROM expenses WHERE "householdId" = :householdId';
 
     if(!empty($expenseName)){
-        $sql .= ' AND expenseName LIKE :expenseName';
+        $sql .= ' AND "expenseName" LIKE :expenseName';
     }
 
     if(!empty($dateRange)){
-        $sql .= ' AND expenseDate BETWEEN :startDate AND :endDate';
+        $sql .= ' AND "expenseDate" BETWEEN :startDate AND :endDate';
     }
 
     if(!empty($categoryId)){
-        $sql .= ' AND categoryId = :categoryId';
+        $sql .= ' AND "categoryId" = :categoryId';
     }
 
     if(!empty($userId)){
-        $sql .= ' AND userId = :userId';
+        $sql .= ' AND "userId" = :userId';
     }
 
     /*if(empty($hosueholdid)){

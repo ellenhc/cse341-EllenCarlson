@@ -4,7 +4,7 @@
 //Function to get the category classifications
 function getCategories(){
     $db = databaseConnect();
-    $sql = 'SELECT categoryId, categoryName FROM categories';
+    $sql = 'SELECT "categoryId", "categoryName" FROM categories';
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $categories = $stmt->fetchAll();
@@ -14,7 +14,7 @@ function getCategories(){
 
 function getUsers(){
     $db = databaseConnect();
-    $sql = 'SELECT userId, userFirstName, userLastName FROM users';
+    $sql = 'SELECT "userId", "userFirstName", "userLastName" FROM users';
     $stmt = $db->prepare($sql);
     $stmt->execute();
     $users = $stmt->fetchAll();
