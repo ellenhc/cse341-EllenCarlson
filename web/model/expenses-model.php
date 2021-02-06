@@ -51,4 +51,15 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
     $stmt->closeCursor();
     return $list;
 }
+
+function getOneExpense($expenseId){
+    $db = databaseConnect();
+    $sql = 'SELECT * FROM expenses WHERE expenseId = :expenseId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':expenseId', $expenseId, PDO::PARAM_INT);
+    $stmt->execute();
+    $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $details[0];
+}
 ?>

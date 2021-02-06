@@ -23,3 +23,25 @@ function buildUserList($users){
     $userList .= '</select>'; 
     return $userList;
 }
+
+function listOfExpenses($expenses){
+    $view = "<div class='expense-list'";
+    foreach($expenses as $expense){
+        $view .= "<div class='expense-card'>";
+        $view .= "<div class='expense-date'>$expense[expenseDate]</div>";
+        $view .= "<div class='expense-name'><a href='/expenses/?action=details&id=".urlencode($expense['expenseId'])."'></a>$expense[expenseName]</div>";
+        $view .= "<div class='expense-price'>$expense[expensePrice]</div>";
+        $view .= "</div>";
+    }
+    $view .= "</div>";
+    return $view;
+}
+
+function buildExpenseDetails($details){
+    $view = "<h1>$details[expenseName]</h1>";
+    $view .= "<h2>$details[expensePrice]</h2>";
+    $view .= "<p>$details[expenseDate]</p>";
+    //$view .= "<p>$details[categoryId]</p>";
+    //Want to show the category it's under....
+    return $view;
+}

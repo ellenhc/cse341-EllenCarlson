@@ -32,8 +32,25 @@ switch ($action){
         //Send data to the model
         // Function in model that queries the database
         $expenseArray = expenseSearch($expenseName, $daterange, $categoryId, $userId, $householdId);
-        echo json_encode($expenseArray);
-
+        
+        if(!count($expenseArray)){
+            $message = "<p class='notice'>Sorry, no records could be found.</p>";
+        }
+        else{
+            $expensesList = listOfExpenses($expenseArray);
+        }
+        include '../view/expense-list.php';
+        break;
+    case 'details':
+        $expenseId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+        $details = getOneExpense($expenseId); //calls model
+        if(!count($details)){
+            $message = "<p class='notice'>Sorry, that record could not be found.</p>";
+        }
+        else{
+            $detailsDisplay = buildExpenseDetails($details); //calls fxn in library
+        }
+        include '../view/expense-detail.php';
         break;
     default:
         $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
