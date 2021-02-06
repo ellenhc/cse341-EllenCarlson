@@ -9,7 +9,7 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
 
     if(!empty($expenseName)){
        // $sql .= ' AND "expenseName" LIKE :expenseName';
-       $sql .= ' AND "expenseName" LIKE :expenseName';
+       $sql .= ' AND lower("expenseName") LIKE :expenseName';
     }
 
     if(!empty($dateRange)){
@@ -30,6 +30,7 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
 
     $stmt = $db->prepare($sql);
     if(!empty($expenseName)){
+        strtolower($expenseName);
         $stmt->bindValue(':expenseName', '%'.$expenseName.'%', PDO::PARAM_STR);
     }
     if(!empty($categoryId)){
