@@ -5,7 +5,7 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
     $db = databaseConnect();
 
     //default statement to pull EVERYTHING for a household
-    $sql = 'SELECT * FROM expenses INNER JOIN categories ON "expenses.categoryId" = "categories.categoryId"';
+    $sql = 'SELECT expenses.*, "users.userFirstName", "users.userLastName", "categories.categoryName" FROM expenses INNER JOIN categories ON "expenses.categoryId" = "categories.categoryId"';
     $sql .= ' INNER JOIN users ON "expenses.userId" = "users.userId" WHERE "householdId" = :householdId';
 
     if(!empty($expenseName)){
