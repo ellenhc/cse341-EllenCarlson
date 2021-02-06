@@ -25,7 +25,7 @@ function buildUserList($users){
 }
 
 function listOfExpenses($expenses){
-    $view = "<div class='expense-list'";
+    $view = "<div class='expense-list'>";
     foreach($expenses as $expense){
         $view .= "<div class='expense-card'>";
         $view .= "<div class='expense-date'>$expense[expenseDate]</div>";
