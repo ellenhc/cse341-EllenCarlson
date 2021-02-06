@@ -31,7 +31,7 @@ function listOfExpenses($expenses){
         $view .= "<div class='expense-date'>$expense[expenseDate]</div>";
         $view .= "<div class='expense-text'><a class='expense-name' href='/expenses/?action=details&id=".urlencode($expense['expenseId'])."'>$expense[expenseName]</a>";
         $view .= "<div class='expense-price'>$expense[expensePrice]</div></div>";
-        $view .= "</div>";
+        $view .= "</div><hr>";
     }
     $view .= "</div>";
     return $view;

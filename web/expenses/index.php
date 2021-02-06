@@ -42,14 +42,17 @@ switch ($action){
         include '../view/expense-list.php';
         break;
     case 'details':
+        //the id is coming in the url. verified that it's working there.
         $expenseId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-        $details = getOneExpense($expenseId); //calls model
+        $message = "something worked!";
+        echo $message;
+        /*$details = getOneExpense($expenseId); //calls expense model
         if(!count($details)){
             $message = "<p class='notice'>Sorry, that record could not be found.</p>";
         }
         else{
             $detailsDisplay = buildExpenseDetails($details); //calls fxn in library
-        }
+        }*/
         include '../view/expense-detail.php';
         break;
     default:

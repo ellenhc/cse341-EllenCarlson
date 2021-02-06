@@ -51,10 +51,6 @@ button:hover {
   color: #8F8F8F;
 }
 
-.expense-card {
-  border-color: #4F9537;
-}
-
 .expense-card .expense-date {
   color: #8F8F8F;
 }
@@ -229,7 +225,6 @@ footer {
 }
 
 .expense-list .expense-card {
-  border-bottom: 2px solid transparent;
   margin-bottom: 1rem;
 }
 /*# sourceMappingURL=style.css.map */
