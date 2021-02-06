@@ -8,7 +8,7 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
     $sql = 'SELECT * FROM expenses WHERE "householdId" = :householdId';
 
     if(!empty($expenseName)){
-        $sql .= ' AND "expenseName" LIKE :expenseName';
+        $sql .= ' AND "expenseName" LIKE '%' + :expenseName + '%'';
     }
 
     if(!empty($dateRange)){
@@ -23,7 +23,7 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
         $sql .= ' AND "userId" = :userId';
     }
 
-    /*if(empty($hosueholdid)){
+    /*if(empty($householdId)){
         THROW AN ERROR IF IT IS EMPTY
     }*/
 

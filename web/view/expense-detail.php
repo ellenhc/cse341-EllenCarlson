@@ -13,7 +13,7 @@
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
-    <main>
+    <main class="set-width">
         <?php if (isset($message)) {
             echo $message;
         } ?>
