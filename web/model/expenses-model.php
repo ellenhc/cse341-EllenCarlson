@@ -58,7 +58,7 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
 
 function getOneExpense($expenseId){
     $db = databaseConnect();
-    $sql = 'SELECT * FROM expenses WHERE "expenseId" = :expenseId';
+    $sql = 'SELECT expenses.*, users."userFirstName", users."userLastName", categories."categoryName" FROM expenses WHERE "expenseId" = :expenseId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':expenseId', $expenseId, PDO::PARAM_INT);
     $stmt->execute();
