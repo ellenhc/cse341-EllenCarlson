@@ -76,7 +76,7 @@ form select {
   .banner-content,
   .sec-content,
   .footer-content,
-  .set-width,
+  .expense-div,
   form {
     width: 60%;
     margin: auto;
@@ -181,6 +181,10 @@ button {
 
 .card h4 {
   margin-bottom: 0.5rem;
+}
+
+.expense-div h1 {
+  text-align: center;
 }
 
 .header-container ul {

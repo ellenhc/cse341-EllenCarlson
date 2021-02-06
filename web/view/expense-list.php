@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-    <title>Expense List | BudgetTracker</title>
+    <title>Transactions | BudgetTracker</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico">
@@ -13,7 +13,7 @@
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
-    <main class="set-width">
+    <main class="expense-div">
         <h1>Search Results</h1>
         <?php if (isset($message)) {
             echo $message;

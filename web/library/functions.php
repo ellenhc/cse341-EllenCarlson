@@ -38,10 +38,11 @@ function listOfExpenses($expenses){
 }
 
 function buildExpenseDetails($details){
-    $view = "<h1>$details[expenseName]</h1>";
-    $view .= "<h2>$details[expensePrice]</h2>";
-    $view .= "<p>$details[expenseDate]</p>";
-    //$view .= "<p>$details[categoryId]</p>";
-    //Want to show the category it's under....
+    $view = "<h3>$details[expenseDate] | $details[expenseName]</h3>";
+    $view .= "<h3>$details[expensePrice]</h3>";
+    $view .= "<div><h3>Category</h3>";
+    $view .= "<p>$details[categoryName]</p></div>";
+    $view .= "<div><h3>Submitted by</h3>";
+    $view .= "<p>$details[userFirstName] $details[userLastName]</p></div>";
     return $view;
 }

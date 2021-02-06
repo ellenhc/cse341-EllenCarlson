@@ -17,7 +17,8 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
     }
 
     if(!empty($categoryId)){
-        $sql .= ' AND "categoryId" = :categoryId';
+       $sql .= ' AND "categoryId" = :categoryId';
+       
     }
 
     if(!empty($userId)){
@@ -27,6 +28,9 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
     /*if(empty($householdId)){
         THROW AN ERROR IF IT IS EMPTY
     }*/
+
+    $sql .= ' INNER JOIN categories ON "expenses.categoryId" = "categories.categoryId"';
+    $sql .= ' INNER JOIN users ON "expenses.userId" = "users.userId"';
 
     $stmt = $db->prepare($sql);
     if(!empty($expenseName)){
