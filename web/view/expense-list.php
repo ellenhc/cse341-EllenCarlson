@@ -14,6 +14,7 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
     <main class="set-width">
+        <h1>Search Results</h1>
         <?php if (isset($message)) {
             echo $message;
         } ?>

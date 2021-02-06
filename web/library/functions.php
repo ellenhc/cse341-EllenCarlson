@@ -29,7 +29,7 @@ function listOfExpenses($expenses){
     foreach($expenses as $expense){
         $view .= "<div class='expense-card'>";
         $view .= "<div class='expense-date'>$expense[expenseDate]</div>";
-        $view .= "<div class='expense-text'><div class='expense-name'><a href='/expenses/?action=details&id=".urlencode($expense['expenseId'])."'>$expense[expenseName]</a></div>";
+        $view .= "<div class='expense-text'><a class='expense-name' href='/expenses/?action=details&id=".urlencode($expense['expenseId'])."'>$expense[expenseName]</a>";
         $view .= "<div class='expense-price'>$expense[expensePrice]</div></div>";
         $view .= "</div>";
     }

@@ -37,3 +37,11 @@ button {
 footer {
     padding: 1rem;
 }
+
+.expense-list {
+    padding: 1.5rem 1rem;
+    .expense-card {
+        border-bottom: 2px solid transparent;
+        margin-bottom: 1rem;
+    }
+}
