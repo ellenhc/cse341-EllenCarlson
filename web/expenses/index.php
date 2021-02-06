@@ -44,9 +44,8 @@ switch ($action){
     case 'details':
         //the id is coming in the url. verified that it's working there.
         $expenseId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-        $message = "something worked!";
-        echo $message;
-        /*$details = getOneExpense($expenseId); //calls expense model
+        echo $expenseId;
+        /*$details = getOneExpense($expenseId); //I THINK IT'S BREAKING HERE
         if(!count($details)){
             $message = "<p class='notice'>Sorry, that record could not be found.</p>";
         }
