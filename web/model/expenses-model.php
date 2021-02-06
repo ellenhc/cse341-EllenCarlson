@@ -8,7 +8,8 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
     $sql = 'SELECT * FROM expenses WHERE "householdId" = :householdId';
 
     if(!empty($expenseName)){
-        $sql .= ' AND "expenseName" LIKE '%' + :expenseName + '%'';
+       // $sql .= ' AND "expenseName" LIKE :expenseName';
+       $sql .= ' AND "expenseName" LIKE :expenseName';
     }
 
     if(!empty($dateRange)){
@@ -29,7 +30,7 @@ function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $househol
 
     $stmt = $db->prepare($sql);
     if(!empty($expenseName)){
-        $stmt->bindValue(':expenseName', $expenseName, PDO::PARAM_STR);
+        $stmt->bindValue(':expenseName', '%'.$expenseName.'%', PDO::PARAM_STR);
     }
     if(!empty($categoryId)){
         $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
