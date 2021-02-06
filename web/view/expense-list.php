@@ -14,7 +14,7 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
     <main class="expense-div">
-        <h1>Search Results</h1>
+        <h1>Transactions</h1>
         <?php if (isset($message)) {
             echo $message;
         } ?>

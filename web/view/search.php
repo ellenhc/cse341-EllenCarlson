@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-    <title>Search | FiNanny</title>
+    <title>Search Transactions | FiNanny</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico">
@@ -15,7 +15,7 @@
     </header>
     <main>
         <form action="/expenses/index.php" method="post" class="search-form">
-            <h1>Advanced Search</h1>
+            <h1>View Transactions</h1>
             <h3>Limit my search results by:</h3>
             <label for="expenseName">Name:</label>
             <input type="text" name="expenseName" id="expenseName">
