@@ -3,9 +3,8 @@
 
 function getAllBudgets($budgetName, $budgetAmount, $categoryId, $householdId){
     $db = databaseConnect();
-    $sql = 'SELECT budgets.*, categories."categoryName" FROM budgets INNER JOIN categories ON budgets."categoryId" = categories."categoryId" WHERE expenses."householdId" = :householdId';
+    $sql = 'SELECT budgets.*, categories."categoryName" FROM budgets INNER JOIN categories ON budgets."categoryId" = categories."categoryId" WHERE budgets."householdId" = :householdId';
     if(!empty($budgetName)){
-        // $sql .= ' AND "expenseName" LIKE :expenseName';
         $sql .= ' AND lower("budgetName") LIKE :budgetName';
      }
      if(!empty($budgetAmount)){
