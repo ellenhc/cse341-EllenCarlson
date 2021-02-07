@@ -19,7 +19,7 @@
                 <div>
                     <h1>Experience the easiest way to track your spending</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis est et sem porta vehicula. Morbi nibh elit, tempor vel sem et, aliquam porttitor tortor. Aenean porta mattis gravida.</p>
-                    <button href="/accounts/index.php?action=register">Join Finanny</button>
+                    <a class="button" href="/accounts/index.php?action=register">Join Finanny</a>
                 </div>
                 <img src="/images/piggy_bank.png" alt="Image of a person's hand dropping coins into a piggy bank">
             </div>
@@ -35,22 +35,22 @@
                 <h2>Finanny is loaded with free features</h2>
                 <div class="card-wrapper">
                     <div class="card">
-                        <img src="\images\house.png" alt="Illustration of a white house on a blue background">
+                        <img src="/images/house.png" alt="Illustration of a white house on a blue background">
                         <h4>Manage Households</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <div class="card">
-                        <img src="\images\receipt.png" alt="Illustration of a receipt on a green background">
+                        <img src="/images/receipt.png" alt="Illustration of a receipt on a green background">
                         <h4>Log Expenses</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <div class="card">
-                        <img src="\images\savings.png" alt="Illustration of money with an upwards arrow">
+                        <img src="/images/savings.png" alt="Illustration of money with an upwards arrow">
                         <h4>Increase Savings</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <div class="card">
-                        <img src="\images\budget.png" alt="Illustration of a calculator">
+                        <img src="/images/budget.png" alt="Illustration of a calculator">
                         <h4>Create Budgets</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>

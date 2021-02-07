@@ -5,6 +5,7 @@
     .sec-content,
     .footer-content,
     .expense-div,
+    .budget-div,
     form {
         width: 60%;
         margin: auto;
@@ -19,10 +20,12 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 1rem;
     }
-    .expense-card {
+    .expense-card,
+    .budget-card {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        .expense-text {
+        .expense-text,
+        .budget-text {
             display: flex;
             justify-content: space-between;
         }

@@ -21,7 +21,7 @@
             <input type="text" name="expenseName" id="expenseName">
 
             <label for="daterange">Date Added:</label>
-            <select name="daterange" id="dates">
+            <select name="daterange" id="daterange">
                 <option value="7">7 days</option>
                 <option value="30">30 days</option>
                 <option value="60">60 days</option>

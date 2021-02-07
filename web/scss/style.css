@@ -9,7 +9,8 @@ html {
 
 .home-div,
 .sec-div,
-.set-width {
+.expense-div,
+.budget-div {
   background-color: #f9f9f9;
 }
 
@@ -37,13 +38,13 @@ form a:hover {
 }
 
 input[type="submit"],
-button {
+.button {
   color: white;
   background-color: #73c259;
 }
 
 input[type="submit"]:hover,
-button:hover {
+.button:hover {
   background-color: #5EB342;
 }
 
@@ -77,6 +78,7 @@ form select {
   .sec-content,
   .footer-content,
   .expense-div,
+  .budget-div,
   form {
     width: 60%;
     margin: auto;
@@ -97,13 +99,17 @@ form select {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
   }
-  .expense-card {
+  .expense-card,
+  .budget-card {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 2fr;
         grid-template-columns: 1fr 2fr;
   }
-  .expense-card .expense-text {
+  .expense-card .expense-text,
+  .expense-card .budget-text,
+  .budget-card .expense-text,
+  .budget-card .budget-text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -135,7 +141,7 @@ img {
 }
 
 input,
-button {
+.button {
   border: none;
 }
 
@@ -167,7 +173,7 @@ form .message {
 }
 
 input[type="submit"],
-button {
+.button {
   text-transform: uppercase;
 }
 
@@ -198,7 +204,7 @@ button {
   margin-right: 1rem;
 }
 
-button {
+.button {
   padding: 10px 24px;
   border-radius: 4px;
 }
