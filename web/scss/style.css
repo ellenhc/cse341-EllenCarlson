@@ -189,8 +189,14 @@ input[type="submit"],
   margin-bottom: 0.5rem;
 }
 
-.expense-div h1 {
+.expense-div h1,
+.budget-div h1 {
   text-align: center;
+}
+
+.expense-div h3,
+.budget-div h3 {
+  margin-top: 0.5rem;
 }
 
 .header-container ul {
@@ -222,7 +228,9 @@ input[type="submit"],
 }
 
 .banner,
-.sec-div {
+.sec-div,
+.expense-div,
+.budget-div {
   padding: 1.5rem 0;
 }
 

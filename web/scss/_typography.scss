@@ -46,8 +46,12 @@ input[type="submit"],
     }
 }
 
-.expense-div {
+.expense-div,
+.budget-div {
     h1 {
         text-align: center;
+    }
+    h3 {
+        margin-top: 0.5rem;
     }
 }
