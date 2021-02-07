@@ -50,9 +50,8 @@ function buildExpenseDetails($details){
 function listOfBudgets($budgets){
     $view = "<div class='budget-list>";
     foreach($budgets as $budget){
-        $view .= "<div class='budget-card'>";
         $view .= "<div class='budget-text'><a href='/budgets/?action=details&id=".urlencode($budget['budgetId'])."'>$budget[budgetName] > $budget[categoryName]</a>";
-        $view .= "<div class='budget-amount'>$budget[budgetAmount]</div></div>";
+        $view .= "<div class='budget-amount'>$budget[budgetAmount]</div>";
         $view .= "</div><hr>";
     }
     $view .= "</div>";

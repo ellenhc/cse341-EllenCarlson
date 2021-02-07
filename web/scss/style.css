@@ -113,7 +113,7 @@ form select {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .budget-card {
+  .budget-text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
