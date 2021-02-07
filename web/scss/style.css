@@ -99,23 +99,24 @@ form select {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
   }
-  .expense-card,
-  .budget-card {
+  .expense-card {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 2fr;
         grid-template-columns: 1fr 2fr;
   }
-  .expense-card .expense-text,
-  .expense-card .budget-text,
-  .budget-card .expense-text,
-  .budget-card .budget-text {
+  .expense-card .expense-text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+  }
+  .budget-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -228,10 +229,13 @@ input[type="submit"],
 }
 
 .banner,
-.sec-div,
+.sec-div {
+  padding: 1.5rem 0;
+}
+
 .expense-div,
 .budget-div {
-  padding: 1.5rem 0;
+  padding: 1.5rem;
 }
 
 footer {

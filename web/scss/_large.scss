@@ -20,14 +20,15 @@
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 1rem;
     }
-    .expense-card,
-    .budget-card {
+    .expense-card {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        .expense-text,
-        .budget-text {
+        .expense-text {
             display: flex;
             justify-content: space-between;
         }
+    }
+    .budget-card {
+        display: flex;
     }
 }
