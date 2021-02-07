@@ -46,3 +46,23 @@ function buildExpenseDetails($details){
     $view .= "<p>$details[userFirstName] $details[userLastName]</p></div>";
     return $view;
 }
+
+function listOfBudgets($budgets){
+    $view = "<div class='budget-list>";
+    foreach($budgets as $budget){
+        $view .= "<div class='budget-card'>";
+        $view .= "<div class='budget-category'>$budget[categoryName]</div>";
+        $view .= "<div class='budget-text'><a class='budget-name' href='/expenses/?action=details&id=".urlencode($budget['budgetId'])."'>$budget[budgetName]</a>";
+        $view .= "<div class='budget-amount'>$budget[budgetAmount]</div></div>";
+        $view .= "</div><hr>";
+    }
+    $view .= "</div>";
+    return $view;
+}
+
+function buildBudgetDetails($details){
+    $view = "<h3>$details[budgetName]</h3>";
+    $view .= "<h2>$details[budgetAmount]</h2>";
+    $view .= "<h2>$details[categoryName]</h2>";
+    return $view;
+}

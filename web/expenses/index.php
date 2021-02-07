@@ -31,7 +31,7 @@ switch ($action){
 
         //Send data to the model
         // Function in model that queries the database
-        $expenseArray = expenseSearch($expenseName, $daterange, $categoryId, $userId, $householdId);
+        $expenseArray = getAllExpenses($expenseName, $daterange, $categoryId, $userId, $householdId);
         
         if(!count($expenseArray)){
             $message = "<p class='notice'>Sorry, no records could be found.</p>";

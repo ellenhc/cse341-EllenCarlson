@@ -1,7 +1,7 @@
 <?php
 //This is the expenses model
 
-function expenseSearch($expenseName, $dateRange, $categoryId, $userId, $householdId){
+function getAllExpenses($expenseName, $dateRange, $categoryId, $userId, $householdId){
     $db = databaseConnect();
 
     //default statement to pull EVERYTHING for a household
