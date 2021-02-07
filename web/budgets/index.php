@@ -33,9 +33,7 @@ switch ($action){
         include '../view/budget-detail.php';
         break;
     default:
-        //$categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
-        //$userList = buildUserList($users); // Calls fxn to create a select for users
-        $budgetsArray = getAllBudgets($budgetName, $budgetAmount, $categoryId, $householdId);
+        $budgetsArray = getAllBudgets();
         if(!count($budgetsArray)){
             $message = "<p class='notice'>Sorry, no records could be found.</p>";
         }
