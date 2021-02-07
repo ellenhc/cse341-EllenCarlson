@@ -146,6 +146,11 @@ input,
   border: none;
 }
 
+.button {
+  display: inline-block;
+  margin: 1.5rem 0;
+}
+
 .header-container li {
   display: block;
   text-align: center;
