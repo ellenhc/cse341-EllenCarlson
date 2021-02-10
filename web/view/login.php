@@ -28,7 +28,7 @@
             <input type="password" id="pwd" name="userPassword" placeholder="Password" required>
             <input type="submit" value="Login">
             <input type="hidden" name="action" value="Login">
-            <p class="message">Not registered? <a href="#">Create an account</a></p>
+            <p class="message">Not registered? <a href="/accounts/index.php?action=register">Create an account</a></p>
         </form>
     </main>
     <footer>
