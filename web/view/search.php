@@ -45,11 +45,6 @@ if (!$_SESSION['loggedin']){
 
             <!--The action key-value pair-->
             <input type="hidden" name="action" value="searchExpenses">
-            <input type="hidden" name="householdId" value="<?php if (isset($userData['householdId'])) {
-                                                                echo $userData['householdId'];
-                                                            } elseif (isset($_SESSION['userData']['householdId'])) {
-                                                                echo $_SESSION['userData']['householdId'];
-                                                            } ?>">
         </form>
     </main>
     <footer>

@@ -25,7 +25,7 @@ switch ($action) {
         $userLastName = filter_input(INPUT_POST, 'userLastName', FILTER_SANITIZE_STRING);
         $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
         $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
-        $householdId = filter_input(INPUT_POST, 'householdId', FILTER_SANITIZE_NUMBER_INT);
+        //$householdId = filter_input(INPUT_POST, 'householdId', FILTER_SANITIZE_NUMBER_INT);
 
         $userEmail = checkEmail($userEmail);
 
@@ -37,7 +37,8 @@ switch ($action) {
             exit;
         }
         
-        //$householdId = 1; //TEMP SETTING HOUSEHOLD ID TO ZERO
+        // As a default, EVERY user's householdId is initially set to zero?
+        $householdId = 1;
 
         // Check for missing data
         if (empty($userFirstName) || empty($userLastName) || empty($userEmail) || empty($userPassword)) {
