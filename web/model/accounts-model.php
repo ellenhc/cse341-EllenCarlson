@@ -37,7 +37,7 @@ function checkExistingEmail($userEmail) {
 
 function getUser($userEmail){
     $db = databaseConnect();
-    $sql = 'SELECT * FROM users WHERE "userEmail" = :userEmail'; // Do I need to add the householdId or leave it out?
+    $sql = 'SELECT * FROM users WHERE "userEmail" = :userEmail';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
     $stmt->execute();

@@ -79,6 +79,7 @@ form select {
   .footer-content,
   .expense-div,
   .budget-div,
+  .notice,
   form {
     width: 60%;
     margin: auto;
