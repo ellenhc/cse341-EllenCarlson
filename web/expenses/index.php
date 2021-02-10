@@ -27,7 +27,8 @@ switch ($action){
         $daterange = filter_input(INPUT_POST, 'daterange', FILTER_SANITIZE_NUMBER_INT);
         $categoryId = filter_input(INPUT_POST, 'categoryId', FILTER_SANITIZE_NUMBER_INT); 
         $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT); 
-        $householdId = $_SESSION['userData']['householdId']; //was previously set to 1 here
+        //$householdId = $_SESSION['userData']['householdId']; //was previously set to 1 here now says no records could be found
+        $householdId = $userData['householdId'];
 
         //Send data to the model
         // Function in model that queries the database
