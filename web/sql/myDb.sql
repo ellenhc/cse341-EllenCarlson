@@ -49,8 +49,8 @@ CREATE TABLE budgets (
 
 INSERT INTO households ("householdName") VALUES ('Carlson');
 
-INSERT INTO users ("userFirstName", "userLastName", "userEmail", "userPassword", "householdId") VALUES ('Ellen', 'Carlson', 'ellen@finanny.com', '1234', 1);
-INSERT INTO users ("userFirstName", "userLastName", "userEmail", "userPassword", "householdId") VALUES ('Matt', 'Carlson', 'matt@finanny.com', '1234', 1);
+INSERT INTO users ("userFirstName", "userLastName", "userEmail", "userPassword", "householdId") VALUES ('Ellen', 'Carlson', 'ellen@finanny.com', '$2y$10$CZv3KMtAMDdEdk84qZR94uP6PnkNxCMObWJ36kJI7e6bQ1Zr935Zm', 1);
+INSERT INTO users ("userFirstName", "userLastName", "userEmail", "userPassword", "householdId") VALUES ('Matt', 'Carlson', 'matt@finanny.com', '$2y$10$CZv3KMtAMDdEdk84qZR94uP6PnkNxCMObWJ36kJI7e6bQ1Zr935Zm', 1);
 
 INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Gas', 34, '2021-02-02', 10, 1, 1);
 INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Drywall', 71.88, '2021-01-01', 6, 2, 1);
