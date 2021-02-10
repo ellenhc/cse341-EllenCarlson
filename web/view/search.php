@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php 
+if (!$_SESSION['loggedin']){
+    //if not logged in, send to main controller
+    header('Location: /index.php');
+    exit;
+}
+?><!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -39,6 +45,11 @@
 
             <!--The action key-value pair-->
             <input type="hidden" name="action" value="searchExpenses">
+            <input type="hidden" name="householdId" value="<?php if (isset($userData['householdId'])) {
+                                                                echo $userData['householdId'];
+                                                            } elseif (isset($_SESSION['userData']['householdId'])) {
+                                                                echo $_SESSION['userData']['householdId'];
+                                                            } ?>">
         </form>
     </main>
     <footer>

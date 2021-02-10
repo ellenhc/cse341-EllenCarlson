@@ -25,6 +25,9 @@ switch ($action) {
         $userLastName = filter_input(INPUT_POST, 'userLastName', FILTER_SANITIZE_STRING);
         $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
         $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
+        $householdId = filter_input(INPUT_POST, 'householdId', FILTER_SANITIZE_NUMBER_INT);
+
+        $userEmail = checkEmail($userEmail);
 
         // Check for existing email address
         $existingEmail = checkExistingEmail($userEmail);
@@ -33,8 +36,18 @@ switch ($action) {
             include '../view/login.php';
             exit;
         }
-        //TEMP SETTING HOUSEHOLD ID TO ZERO
-        $householdId = 1;
+        
+        //$householdId = 1; //TEMP SETTING HOUSEHOLD ID TO ZERO
+
+        // Check for missing data
+        if (empty($userFirstName) || empty($userLastName) || empty($userEmail) || empty($userPassword)) {
+            $message = '<p class="notice">Please provide information for all empty form fields.</p>';
+            include '../view/register.php';
+            exit;
+        }
+
+        // Hash the checked password
+        $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
 
         // Send the data to the model
         $regOutcome = registerUser($userFirstName, $userLastName, $userEmail, $userPassword, $householdId);
@@ -52,12 +65,43 @@ switch ($action) {
 
         break;
     case 'Login':
-        break;
+        $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);
+        $userEmail = checkEmail($userEmail); // Validate the email variable
+        $userPassword = filter_input(INPUT_POST, 'userPassword', FILTER_SANITIZE_STRING);
+
+        // Check for missing form data
+        if (empty($userEmail) || empty($userPassword)){
+            $message = '<p class="notice">Please fill out all empty form fields.</p>';
+            include '../view/login.php';
+            exit;
+        }
+
+        // Gets user data from users table
+        $userData = getUser($userEmail);
+        // Compare the password just submitted against the hashed password in the table
+        $hashCheck = password_verify($userPassword, $userData['userPassword']);
+        // If hashes don't match, return user to login view
+        if(!$hashCheck){
+            $message = '<p class="notice">Please check your password and try again.</p>';
+            include '../view/login.php';
+            exit;
+        }
+
+        $_SESSION['loggedin'] = TRUE;
+        array_pop($userData); // Remove the password from the array
+        $_SESSION['userData'] = $userData; // Store the array into the session
+        include '../view/dashboard.php'; // Send them to dashboard view
+        exit;
     case 'login':
         include '../view/login.php';
         break;
     case 'register':
         include '../view/register.php';
+        break;
+    case 'Logout':
+        session_unset();
+        session_destroy();
+        include '../index.php';
         break;
     default:
         include '../view/500.php';

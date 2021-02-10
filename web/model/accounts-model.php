@@ -34,4 +34,15 @@ function checkExistingEmail($userEmail) {
         return 1;
     }
 }
+
+function getUser($userEmail){
+    $db = databaseConnect();
+    $sql = 'SELECT * FROM users WHERE userEmail = :userEmail'; // Do I need to add the householdId or leave it out?
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
+    $stmt->execute();
+    $userData = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $userData;
+}
 ?>
