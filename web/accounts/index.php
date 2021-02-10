@@ -51,7 +51,7 @@ switch ($action) {
         $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
 
         // Send the data to the model
-        $regOutcome = registerUser($userFirstName, $userLastName, $userEmail, $hashedPassword, $householdId);
+        $regOutcome = registerUser($userFirstName, $userLastName, $userEmail, $householdId, $hashedPassword);
 
         if ($regOutcome === 1) {
             setcookie('firstname', $userFirstName, strtotime('+1 year'), '/');
