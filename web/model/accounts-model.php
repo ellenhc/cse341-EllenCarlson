@@ -5,7 +5,7 @@
 // Function to register a new user
 function registerUser($userFirstName, $userLastName, $userEmail, $userPassword, $householdId){
     $db = databaseConnect();
-    $sql = 'INSERT INTO users (userFirstName, userLastName, userEmail, userPassword, householdId) VALUES (:userFirstName, :userLastName, :userEmail, :userPassword, :householdId)';
+    $sql = 'INSERT INTO users ("userFirstName", "userLastName", "userEmail", "userPassword", "householdId") VALUES (:userFirstName, :userLastName, :userEmail, :userPassword, :householdId)';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userFirstName', $userFirstName, PDO::PARAM_STR);
     $stmt->bindValue(':userLastName', $userLastName, PDO::PARAM_STR);
@@ -21,7 +21,7 @@ function registerUser($userFirstName, $userLastName, $userEmail, $userPassword, 
 //Function to check for exisiting email address
 function checkExistingEmail($userEmail) {
     $db = databaseConnect();
-    $sql = 'SELECT userEmail FROM users WHERE userEmail = :userEmail';
+    $sql = 'SELECT userEmail FROM users WHERE "userEmail" = :userEmail';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
     $stmt->execute();
@@ -37,7 +37,7 @@ function checkExistingEmail($userEmail) {
 
 function getUser($userEmail){
     $db = databaseConnect();
-    $sql = 'SELECT * FROM users WHERE userEmail = :userEmail'; // Do I need to add the householdId or leave it out?
+    $sql = 'SELECT * FROM users WHERE "userEmail" = :userEmail'; // Do I need to add the householdId or leave it out?
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':userEmail', $userEmail, PDO::PARAM_STR);
     $stmt->execute();
