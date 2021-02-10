@@ -25,6 +25,7 @@ if (!$_SESSION['loggedin']) {
         if (isset($message)) {
             echo "<b>$message</b>";
         }
+        echo $userData;
         ?>
     </main>
     <footer>
