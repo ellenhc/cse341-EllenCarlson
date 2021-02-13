@@ -27,7 +27,7 @@ if (!$_SESSION['loggedin']) {
                 ['Categories', 'Amount'],
                 <?php 
                 foreach($allExpenses as $expense){
-                    echo "[$expense[categoryName], $expense[expensePrice]],";
+                    echo "[$expense[categoryName], $expense[sum]],";
                 }
                 ?>
             ]);
