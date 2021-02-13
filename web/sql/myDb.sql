@@ -56,3 +56,19 @@ INSERT INTO users ("userFirstName", "userLastName", "userEmail", "userPassword",
 INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Gas', 34, '2021-02-02', 10, 1, 2);
 INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Drywall', 71.88, '2021-01-01', 6, 2, 2);
 INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Sprouts', 45.58, '2021-02-09', 4, 2, 1);
+
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Palmolive', 18.83, '2021-02-08', 1, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Tithing', 100.33, '2021-02-03', 1, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Tithing', 27.00, '2020-11-15', 1, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Fall tuition', 768.00, '2020-11-22', 2, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Winter tuition', 768.00, '2021-01-06', 2, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Roku', 30.51, '2021-01-22', 3, 2, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Legos', 70.64, '2020-11-23', 3, 2, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Amazon Fresh', 47.07, '2020-11-21', 4, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Amazon Fresh', 39.54, '2020-12-21', 4, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('CeraVe', 16.87, '2020-12-27', 5, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Cotton gloves', 20.96, '2020-12-13', 5, 2, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Gatco', 16.55, '2021-02-07', 6, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Lands End', 109.97, '2021-01-06', 7, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Jiffy Lube', 105.67, '2021-02-03', 10, 1, 2);
+INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES ('Jiffy Lube', 100.50, '2021-02-03', 10, 2, 2);
