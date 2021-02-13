@@ -24,8 +24,10 @@
             } ?>
         </div>
         <div class="button-wrap">
-            <a class="button" href="/expenses/index.php?action=mod&id=${expenseId}" title="Click to modify">Edit</a>
-            <a class="button" href="/expenses/index.php?action=del&id=<?php $details['expenseId']?>" title="Click to delete">Delete</a>
+        <?php
+            echo "<a class='button' href='/expenses/index.php?action=mod&id=${expenseId}' title='Click to modify'>Edit</a>";
+            echo "<a class='button' href='/expenses/index.php?action=del&id=".urlencode($expense['expenseId'])."' title='Click to delete'>Delete</a>";
+            ?>
         </div>
     </main>
     <footer>
