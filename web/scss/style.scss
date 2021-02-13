@@ -51,7 +51,9 @@ footer {
 }
 
 .dashboard {
-    .piechart {
+    .piechart,
+    .recent-transactions,
+    .search {
         border-radius: 4px;
     }
 }

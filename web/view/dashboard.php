@@ -70,6 +70,12 @@ if (!$_SESSION['loggedin']) {
                 <h5>Last 30 days</h5>
                 <div id="piechart"></div>
             </div>
+            <div class="recent-transactions">
+                <h2>Recent Transactions</h2>
+                <?php if (isset($expensesList)) {
+                    echo $expensesList;
+                } ?>
+            </div>
             <div class="search">
                 <form action="/expenses/index.php" method="post" class="search-form">
                     <h2>Search Transactions</h2>
@@ -97,12 +103,6 @@ if (!$_SESSION['loggedin']) {
                     <!--The action key-value pair-->
                     <input type="hidden" name="action" value="searchExpenses">
                 </form>
-            </div>
-            <div class="recent-transactions">
-                <h2>Recent Transactions</h2>
-                <?php if (isset($expensesList)) {
-                    echo $expensesList;
-                } ?>
             </div>
         </div>
     </main>
