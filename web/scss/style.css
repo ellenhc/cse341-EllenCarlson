@@ -57,8 +57,8 @@ input[type="submit"]:hover,
   color: #8F8F8F;
 }
 
-.expense-card .expense-name:hover {
-  color: #4F9537;
+.expense-card:hover {
+  background-color: #F2F2F2;
 }
 
 .dashboard .piechart,
@@ -88,7 +88,6 @@ form select {
   .set-width,
   .notice {
     width: 60%;
-    margin: auto;
   }
   .home-content {
     display: -ms-grid;
@@ -245,6 +244,11 @@ input[type="submit"],
 .header-container li {
   border-bottom: 2px solid transparent;
   margin-right: 1rem;
+}
+
+.set-width {
+  width: 98%;
+  margin: auto;
 }
 
 .button {

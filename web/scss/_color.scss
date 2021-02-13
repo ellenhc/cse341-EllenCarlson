@@ -59,10 +59,8 @@
         .expense-date {
             color: $medgray;
         }
-        .expense-name {
-            &:hover {
-                color: $darkgreen;
-            }
+        &:hover {
+            background-color: $lightgray;
         }
     }
     
