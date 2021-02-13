@@ -121,7 +121,7 @@ form select {
     display: -ms-flexbox;
     display: flex;
   }
-  .dashboard {
+  .dash-wrapper {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -130,19 +130,19 @@ form select {
         grid-template-rows: auto auto;
     grid-gap: 1.5rem;
   }
-  .dashboard .piechart {
+  .dash-wrapper .piechart {
     -ms-grid-column: 1;
     grid-column: 1;
     -ms-grid-row: 1;
     grid-row: 1;
   }
-  .dashboard .search {
+  .dash-wrapper .search {
     -ms-grid-column: 2;
     grid-column: 2;
     -ms-grid-row: 1;
     grid-row: 1;
   }
-  .dashboard .recent-transactions {
+  .dash-wrapper .recent-transactions {
     -ms-grid-column: 1;
     grid-column: 1;
     -ms-grid-row: 2;

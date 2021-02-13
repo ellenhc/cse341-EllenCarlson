@@ -20,7 +20,7 @@
             echo "<b>$message</b>";
         }
         ?>
-        <form action="/accounts/index.php" method="post" class="login-form">
+        <form action="/accounts/index.php" method="post" class="login-form set-width">
         <h1>Sign In</h1>
             <label for="email">Email:</label>
             <input type="email" id="email" name="userEmail" placeholder="Email Address" required>
