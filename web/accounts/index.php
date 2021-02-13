@@ -8,6 +8,8 @@ session_start();
 require_once '../library/connections.php';
 // Get the accounts model
 require_once '../model/accounts-model.php';
+// Get the expenses model
+require_once '../model/expenses-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 
