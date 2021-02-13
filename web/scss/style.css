@@ -284,6 +284,7 @@ footer {
 
 .expense-list .expense-card {
   margin-bottom: 1rem;
+  display: block;
 }
 
 .dash-wrapper > div,

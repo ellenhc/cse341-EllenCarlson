@@ -27,11 +27,11 @@ function buildUserList($users){
 function listOfExpenses($expenses){
     $view = "<div class='expense-list'>";
     foreach($expenses as $expense){
-        $view .= "<div class='expense-card'>";
+        $view .= "<a href='/expenses/?action=details&id=".urlencode($expense['expenseId'])."'><span class='expense-card'>";
         $view .= "<div class='expense-date'>$expense[expenseDate]</div>";
-        $view .= "<div class='expense-text'><a class='expense-name' href='/expenses/?action=details&id=".urlencode($expense['expenseId'])."'>$expense[expenseName]</a>";
+        $view .= "<div class='expense-text'><div class='expense-name'$expense[expenseName]></div>";
         $view .= "<div class='expense-price'>$expense[expensePrice]</div></div>";
-        $view .= "</div><hr>";
+        $view .= "</span></a><hr>";
     }
     $view .= "</div>";
     return $view;
