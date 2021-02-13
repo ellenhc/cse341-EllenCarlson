@@ -27,15 +27,15 @@ if (!$_SESSION['loggedin']) {
                 ['Categories', 'Amount']
                 <?php 
                 $remove = array("$", ",");
-                $replace = str_replace($remove, "", $num);
+                //$replace = str_replace($remove, "", $num);
                 foreach($allExpenses as $expense){
                     if(!$expense[0]){
                         $num = $expense['sum'];
-                        echo ", ['$expense[categoryName]', $replace]";
+                        echo ", ['$expense[categoryName]', str_replace($remove, "", $num)]";
                     }
                     else{
                         $num = $expense['sum'];
-                        echo "['$expense[categoryName]', $replace]";
+                        echo "['$expense[categoryName]', str_replace($remove, "", $num)]";
                     }
                 }
                 ?>
