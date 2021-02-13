@@ -67,7 +67,7 @@ function getOneExpense($expenseId){
     return $details[0];
 }
 
-function getExpensesByCategory($householdId){
+function getExpenseOverview($householdId){
     $db = databaseConnect();
     $sql = 'SELECT categories."categoryName", grouped_expenses.*  FROM (
         SELECT expenses."categoryId", SUM("expensePrice") FROM expenses 

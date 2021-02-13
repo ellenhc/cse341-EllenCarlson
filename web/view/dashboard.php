@@ -43,7 +43,9 @@ if (!$_SESSION['loggedin']) {
             ]);
 
             var options = {
-                title: 'My Monthly Spending'
+                title: 'My Monthly Spending',
+                pieHole: 0.4,
+                colors: ['#73C259', '#3ABC66', '#00B573', '#00A58E', '#0093A2', '#007FAB', '#006AA8', '#005C8D', '#004D72', '#184B65']
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart'));
@@ -63,6 +65,7 @@ if (!$_SESSION['loggedin']) {
             echo "<b>$message</b>";
         }
         ?>
+        <div class=""></div>
         <div id="piechart"></div>
     </main>
     <footer>
