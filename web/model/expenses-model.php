@@ -67,16 +67,17 @@ function getOneExpense($expenseId){
     return $details[0];
 }
 
-function getExpensesByCategory(){
+function getExpensesByCategory($householdId){
     $db = databaseConnect();
     $sql = 'SELECT categories."categoryName", grouped_expenses.*  FROM (
         SELECT expenses."categoryId", SUM("expensePrice") FROM expenses 
-        GROUP BY expenses."categoryId"
+        WHERE expenses."householdId" = :householdId
+        GROUP BY expenses."categoryId" 
     ) as grouped_expenses
     INNER JOIN categories ON grouped_expenses."categoryId" = categories."categoryId"  
     ORDER BY grouped_expenses."categoryId" ASC';
     $stmt = $db->prepare($sql);
-
+    $stmt->bindValue(':householdId', $householdId, PDO::PARAM_INT);
     $stmt->execute();
     $sum = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
