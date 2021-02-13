@@ -76,11 +76,14 @@ switch ($action){
             exit;
         }
         break;
+    
+    case 'search':
+        $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
+        $userList = buildUserList($users); // Calls fxn to create a select for users
+        include '../view/search.php';
+        break;
 
     default:
-        //$categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
-        //$userList = buildUserList($users); // Calls fxn to create a select for users
-        //include '../view/search.php';
         $householdId = $_SESSION['userData']['householdId'];
         $allExpenses = getExpenseOverview($householdId);
 

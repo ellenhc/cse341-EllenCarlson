@@ -65,8 +65,8 @@ input[type="submit"]:hover,
 .dashboard .search,
 .dashboard .recent-transactions {
   background-color: white;
-  -webkit-box-shadow: 5px 5px 15px 5px #8F8F8F;
-          box-shadow: 5px 5px 15px 5px #8F8F8F;
+  -webkit-box-shadow: 3px 3px 10px 1px #8F8F8F;
+          box-shadow: 3px 3px 10px 1px #8F8F8F;
 }
 
 form {
@@ -289,6 +289,10 @@ footer {
 .dash-wrapper > div,
 #piechart {
   border-radius: 4px;
+}
+
+.dash-wrapper {
+  padding: 1.5rem 0;
 }
 
 .dash-wrapper .piechart,
