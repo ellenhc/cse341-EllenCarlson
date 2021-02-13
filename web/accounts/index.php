@@ -115,6 +115,10 @@ switch ($action) {
         break;
     default:
         //include '../view/500.php';
+        $allExpenses = getExpenseOverview($householdId);
+
+        $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
+        $userList = buildUserList($users); // Calls fxn to create a select for users
         include '../view/dashboard.php';
         break;
 }
