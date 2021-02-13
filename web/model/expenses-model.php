@@ -1,7 +1,7 @@
 <?php
 //This is the expenses model
 
-function getAllExpenses($expenseName, $dateRange, $categoryId, $userId, $householdId){
+function searchExpenses($expenseName, $dateRange, $categoryId, $userId, $householdId){
     $db = databaseConnect();
 
     //default statement to pull EVERYTHING for a household
@@ -65,5 +65,21 @@ function getOneExpense($expenseId){
     $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $details[0];
+}
+
+function getExpensesByCategory(){
+    $db = databaseConnect();
+    $sql = 'SELECT categories."categoryName", grouped_expenses.*  FROM (
+        SELECT expenses."categoryId", SUM("expensePrice") FROM expenses 
+        GROUP BY expenses."categoryId"
+    ) as grouped_expenses
+    INNER JOIN categories ON grouped_expenses."categoryId" = categories."categoryId"  
+    ORDER BY grouped_expenses."categoryId" ASC';
+    $stmt = $db->prepare($sql);
+
+    $stmt->execute();
+    $sum = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $sum;
 }
 ?>

@@ -14,6 +14,8 @@ if (!$_SESSION['loggedin']) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/scss/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="/js/piecharts.js"></script>
 </head>
 
 <body>
@@ -27,6 +29,7 @@ if (!$_SESSION['loggedin']) {
         }
         print_r($userData);
         ?>
+        <div id="piechart"></div>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/footer.php'; ?>
