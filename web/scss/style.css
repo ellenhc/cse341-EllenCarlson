@@ -10,7 +10,8 @@ html {
 .home-div,
 .sec-div,
 .expense-div,
-.budget-div {
+.budget-div,
+.piechart {
   background-color: #f9f9f9;
 }
 
@@ -19,7 +20,7 @@ html {
 }
 
 form {
-  background-color: white;
+  background-color: #f9f9f9;
 }
 
 form input[type="email"],
@@ -79,7 +80,8 @@ form select {
   .footer-content,
   .expense-div,
   .budget-div,
-  .notice {
+  .notice,
+  .dashboard {
     width: 60%;
     margin: auto;
   }
@@ -121,8 +123,8 @@ form select {
   .dashboard {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
     grid-gap: 1.5rem;
   }
 }
@@ -260,5 +262,9 @@ footer {
 
 .expense-list .expense-card {
   margin-bottom: 1rem;
+}
+
+.dashboard .piechart {
+  border-radius: 4px;
 }
 /*# sourceMappingURL=style.css.map */

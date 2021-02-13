@@ -71,8 +71,8 @@ if (!$_SESSION['loggedin']) {
         </div>
         <div class="search">
             <form action="/expenses/index.php" method="post" class="search-form">
-                <h1>View Transactions</h1>
-                <h3>Limit my search results by:</h3>
+                <h2>Search Transactions</h2>
+                <h4>Limit my search results by:</h4>
                 <label for="expenseName">Name:</label>
                 <input type="text" name="expenseName" id="expenseName">
 
@@ -97,6 +97,7 @@ if (!$_SESSION['loggedin']) {
                 <input type="hidden" name="action" value="searchExpenses">
             </form>
         </div>
+        <div></div>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/footer.php'; ?>

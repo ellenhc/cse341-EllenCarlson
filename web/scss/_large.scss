@@ -6,7 +6,8 @@
     .footer-content,
     .expense-div,
     .budget-div,
-    .notice
+    .notice,
+    .dashboard
     /*form*/
     {
         width: 60%;
@@ -35,7 +36,7 @@
     }
     .dashboard {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 1fr 1fr;
         grid-gap: 1.5rem;
     }
 }

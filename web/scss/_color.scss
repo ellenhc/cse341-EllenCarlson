@@ -17,7 +17,8 @@
     .home-div,
     .sec-div,
     .expense-div,
-    .budget-div {
+    .budget-div,
+    .piechart {
         background-color: #f9f9f9;
     }
     
@@ -26,7 +27,7 @@
     }
     
     form {
-        background-color: white;
+        background-color: #f9f9f9;
         input[type="email"],
         input[type="password"],
         input[type="text"],
