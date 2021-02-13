@@ -4,14 +4,15 @@
 // Create or access a Session
 session_start();
 
-// Get the database connection file
 require_once '../library/connections.php';
-// Get the accounts model
+require_once '../model/main-model.php';
 require_once '../model/accounts-model.php';
-// Get the expenses model
 require_once '../model/expenses-model.php';
-// Get the functions library
 require_once '../library/functions.php';
+
+// Gets data from main model to populate dropdowns in the search form
+$categories = getCategories(); // gets categories 
+$users = getUsers(); // gets users
 
 // Check for any "action" name - value pairs in the GET or POST
 $action = filter_input(INPUT_POST, 'action', FILTER_SANITIZE_STRING);
@@ -114,11 +115,6 @@ switch ($action) {
         include '../index.php';
         break;
     default:
-        //include '../view/500.php';
-        $allExpenses = getExpenseOverview($householdId);
-
-        $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
-        $userList = buildUserList($users); // Calls fxn to create a select for users
-        include '../view/dashboard.php';
+        include '../view/500.php';
         break;
 }
