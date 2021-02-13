@@ -59,6 +59,11 @@
         .expense-date {
             color: $medgray;
         }
+        .expense-name {
+            &:hover {
+                color: $darkgreen;
+            }
+        }
     }
     
     .dashboard {

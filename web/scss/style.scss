@@ -50,10 +50,14 @@ footer {
     }
 }
 
-.dashboard {
+.dash-wrapper>div,
+#piechart {
+    border-radius: 4px;
+}
+
+.dash-wrapper {
     .piechart,
-    .recent-transactions,
-    .search {
-        border-radius: 4px;
+    .recent-transactions {
+        padding: 1rem;
     }
 }

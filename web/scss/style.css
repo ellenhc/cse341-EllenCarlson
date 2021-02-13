@@ -57,6 +57,10 @@ input[type="submit"]:hover,
   color: #8F8F8F;
 }
 
+.expense-card .expense-name:hover {
+  color: #4F9537;
+}
+
 .dashboard .piechart,
 .dashboard .search,
 .dashboard .recent-transactions {
@@ -282,9 +286,13 @@ footer {
   margin-bottom: 1rem;
 }
 
-.dashboard .piechart,
-.dashboard .recent-transactions,
-.dashboard .search {
+.dash-wrapper > div,
+#piechart {
   border-radius: 4px;
+}
+
+.dash-wrapper .piechart,
+.dash-wrapper .recent-transactions {
+  padding: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

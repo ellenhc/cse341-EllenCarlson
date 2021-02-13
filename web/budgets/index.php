@@ -32,6 +32,13 @@ switch ($action){
         }
         include '../view/budget-detail.php';
         break;
+
+    case 'mod':
+        break;
+    
+    case 'del':
+        break; 
+        
     default:
         $budgetsArray = getAllBudgets();
         if(!count($budgetsArray)){

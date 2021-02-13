@@ -113,4 +113,15 @@ function populateRecentTransactions($dateRange, $householdId){
     $stmt->closeCursor();
     return $list;
 }
+
+function deleteExpense($expenseId){
+    $db = databaseConnect();
+    $sql = 'DELETE FROM expenses WHERE "expenseId" = :expenseId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':expenseId', $expenseId, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
 ?>

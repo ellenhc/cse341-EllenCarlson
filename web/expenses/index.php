@@ -56,6 +56,26 @@ switch ($action){
         include '../view/expense-detail.php';
         break;
 
+    case 'mod':
+        break;
+
+    case 'del':
+        $expenseId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT); // Gets the id from the link
+        $deleteResult = deleteExpense($expenseId); // Calls the model
+        if ($deleteResult === 1){
+            $message = "<p>Transaction was successfully deleted.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /view/expense-list.php'); // WANT TO SHOW DASHBOARD HERE
+            exit;
+        }
+        else {
+            $message = "<p>Error: Transaction was unsuccessfully deleted.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /view/expense-list.php');
+            exit;
+        }
+        break;
+
     default:
         $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
         $userList = buildUserList($users); // Calls fxn to create a select for users

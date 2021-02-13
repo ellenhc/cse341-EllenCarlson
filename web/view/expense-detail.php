@@ -23,6 +23,10 @@
                 echo $detailsDisplay;
             } ?>
         </div>
+        <div class="button-wrap">
+            <a class="button" href="/expenses/index.php?action=mod&id=${expenseId}" title="Click to modify">Edit</a>
+            <a class="button" href="/expenses/index.php?action=del&id=${expenseId}" title="Click to delete">Delete</a>
+        </div>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/footer.php'; ?>
