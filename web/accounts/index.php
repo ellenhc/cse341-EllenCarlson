@@ -91,6 +91,7 @@ switch ($action) {
         $_SESSION['loggedin'] = TRUE;
         array_pop($userData); // Remove the password from the array
         $_SESSION['userData'] = $userData; // Store the array into the session
+        $allExpenses = getExpensesByCategory();
         include '../view/dashboard.php'; // Send them to dashboard view
         exit;
     case 'login':

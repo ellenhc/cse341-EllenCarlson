@@ -15,7 +15,32 @@ if (!$_SESSION['loggedin']) {
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/scss/style.css">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="/js/piecharts.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Categories', 'Amount'],
+                <?php 
+                foreach($allExpenses as $expense){
+                    echo "[$expense[categoryName], $expense[expensePrice]],";
+                }
+                ?>
+            ]);
+
+            var options = {
+                title: 'My Monthly Spending'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
 </head>
 
 <body>
@@ -27,7 +52,6 @@ if (!$_SESSION['loggedin']) {
         if (isset($message)) {
             echo "<b>$message</b>";
         }
-        print_r($userData);
         ?>
         <div id="piechart"></div>
     </main>
