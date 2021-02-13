@@ -26,7 +26,8 @@ if (!$_SESSION['loggedin']) {
             var data = google.visualization.arrayToDataTable([
                 ['Categories', 'Amount']
                 <?php 
-                $fmt = new NumberFormatter( 'de_DE', NumberFormatter::CURRENCY );
+                $fmt = new NumberFormatter( 'en_US', NumberFormatter::CURRENCY );
+                $curr = 'USD';
                 foreach($allExpenses as $expense){
                     if(!$expense[0]){
                         $num = $expense['sum'];
