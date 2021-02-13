@@ -98,6 +98,12 @@ if (!$_SESSION['loggedin']) {
                     <input type="hidden" name="action" value="searchExpenses">
                 </form>
             </div>
+            <div class="recent-transactions">
+                <h2>Recent Transactions</h2>
+                <?php if (isset($expensesList)) {
+                    echo $expensesList;
+                } ?>
+            </div>
         </div>
     </main>
     <footer>
