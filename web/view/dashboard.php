@@ -24,7 +24,7 @@ if (!$_SESSION['loggedin']) {
         function drawChart() {
 
             var data = google.visualization.arrayToDataTable([
-                ['Categories', 'Amount'],
+                ['Categories', 'Amount']
                 <?php 
                 foreach($allExpenses as $expense){
                     //echo "['$expense[categoryName]', $expense[sum]]";
