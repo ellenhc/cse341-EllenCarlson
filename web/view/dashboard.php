@@ -31,11 +31,11 @@ if (!$_SESSION['loggedin']) {
                 foreach($allExpenses as $expense){
                     if(!$expense[0]){
                         $num = $expense['sum'];
-                        echo ", ['$expense[categoryName]', str_replace($remove, "", $num)]";
+                        echo ", ['$expense[categoryName]', str_replace($remove, '', $num)]";
                     }
                     else{
                         $num = $expense['sum'];
-                        echo "['$expense[categoryName]', str_replace($remove, "", $num)]";
+                        echo "['$expense[categoryName]', str_replace($remove, '', $num)]";
                     }
                 }
                 ?>
