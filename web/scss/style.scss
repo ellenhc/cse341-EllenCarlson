@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather&display=swap');
+@import "reset";
 @import "color";
 @import "forms";
-@import "large";
-@import "reset";
 @import "typography";
+@import "large";
 .header-container {
     ul {
         display: flex;

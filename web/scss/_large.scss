@@ -14,8 +14,6 @@
         grid-gap: 1rem;
     }
     .expense-card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
         .expense-text {
             display: flex;
             justify-content: space-between;
