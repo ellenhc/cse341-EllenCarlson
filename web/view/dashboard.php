@@ -66,7 +66,7 @@ if (!$_SESSION['loggedin']) {
         ?>
         <div class="piechart">
             <h2>Recent...</h2>
-            <h6>Last 30 days</h6>
+            <h5>Last 30 days</h5>
             <div id="piechart"></div>
         </div>
         <div class="search">

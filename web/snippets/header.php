@@ -4,7 +4,7 @@
             <li><a href="/index.php">Home</a></li>
             <!-- <li><a href="/accounts/index.php?action=login">Sign In</a></li>
             <li><a href="/accounts/index.php?action=register">Register</a></li> -->
-            <li><a href="/expenses/index.php">Expenses</a></li>
+            <li><a href="/accounts/index.php">Dashboard</a></li>
             <li><a href="/budgets/index.php">Budgets</a></li>
             <?php
             if (isset($_SESSION['loggedin'])) {
