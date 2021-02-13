@@ -67,6 +67,18 @@ function getOneExpense($expenseId){
     return $details[0];
 }
 
+// Gets ALL of a households transactions
+function getAllExpenses($householdId){
+    $db = databaseConnect();
+    $sql = 'SELECT * FROM expenses WHERE "householdId" = :householdId ORDER BY expenses."expenseDate" DESC';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':householdId', $householdId, PDO::PARAM_INT);
+    $stmt->execute();
+    $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $list;
+}
+
 // Returns data needed for the overview pie chart on dashboard
 function getExpenseOverview($householdId){
     $db = databaseConnect();

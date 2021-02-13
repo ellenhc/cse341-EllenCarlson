@@ -4,6 +4,10 @@
     $lightgreen: #73c259;
     $medgreen: #5EB342;
     $darkgreen: #4F9537;
+    $two: #00B573;
+    $three: #00A58E;
+    $four: #0093A2;
+    $five: #007FAB;
     html {
         background-color: $whitegreen;
     }
@@ -43,7 +47,8 @@
     }
     
     input[type="submit"],
-    .button {
+    .button,
+    .button-link {
         color: white;
         background-color: $lightgreen;
         &:hover {
@@ -58,9 +63,6 @@
     .expense-link {
         .expense-date {
             color: $medgray;
-        }
-        &:hover {
-            background-color: $lightgray;
         }
     }
     

@@ -29,7 +29,6 @@ switch ($action){
         $categoryId = filter_input(INPUT_POST, 'categoryId', FILTER_SANITIZE_NUMBER_INT); 
         $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT); 
         $householdId = $_SESSION['userData']['householdId'];
-        //$householdId = $userData['householdId'];
 
         //Send data to the model
         // Function in model that queries the database
@@ -81,6 +80,18 @@ switch ($action){
         $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
         $userList = buildUserList($users); // Calls fxn to create a select for users
         include '../view/search.php';
+        break;
+
+    case 'viewAll':
+        $householdId = $_SESSION['userData']['householdId'];
+        $expenseArray = getAllExpenses($householdId);
+        if(!count($expenseArray)){
+            $message = "<p class='notice'>Sorry, no records could be found.</p>";
+        }
+        else{
+            $expensesList = listOfExpenses($expenseArray);
+        }
+        include '../view/expense-list.php';
         break;
 
     default:

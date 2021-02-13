@@ -3,7 +3,6 @@
 @import "color";
 @import "forms";
 @import "typography";
-@import "large";
 .header-container {
     ul {
         display: flex;
@@ -19,7 +18,8 @@
     margin: auto;
 }
 
-.button {
+.button,
+.button-link {
     padding: 10px 24px;
     border-radius: 4px;
 }
@@ -31,6 +31,12 @@
     }
     button {
         margin-top: 2rem;
+    }
+}
+
+.home-content {
+    .button {
+        margin: 1.5rem 0;
     }
 }
 
@@ -51,8 +57,10 @@ footer {
 .expense-list {
     padding: 1.5rem 1rem;
     .expense-card {
-        margin-bottom: 1rem;
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
     }
 }
 
@@ -68,3 +76,11 @@ footer {
     }
     padding: 1.5rem 0;
 }
+
+.button-wrap {
+    .button-link:first-child {
+        margin-right: 1rem;
+    }
+}
+
+@import "large";

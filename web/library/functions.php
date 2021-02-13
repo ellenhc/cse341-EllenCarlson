@@ -27,11 +27,13 @@ function buildUserList($users){
 function listOfExpenses($expenses){
     $view = "<div class='expense-list'>";
     foreach($expenses as $expense){
-        $view .= "<a class='expense-link' href='/expenses/?action=details&id=".urlencode($expense['expenseId'])."'><span class='expense-card'>";
-        $view .= "<div class='expense-date'>$expense[expenseDate]</div>";
-        $view .= "<div class='expense-text'><div class='expense-name'>$expense[expenseName]</div>";
-        $view .= "<div class='expense-price'>$expense[expensePrice]</div></div>";
-        $view .= "</span></a><hr>";
+        $view .= "<div class='expense-card'><a class='expense-link' href='/expenses/?action=details&id=".urlencode($expense['expenseId'])."'><span class='expense-span'>";
+        $view .= "<div class='expense-text'><p class='expense-date'>$expense[expenseDate]</p>";
+        $view .= "<p class='expense-name'>$expense[expenseName]</p>";
+        $view .= "<p class='expense-price'>$expense[expensePrice]</p></div>";
+        $view .= "</span></a>";
+        $view .= "<div class='button-wrap'><a class='button-link' href='/expenses/index.php?action=mod&id=" . urlencode($expense['expenseId']) . "' title='Click to edit'>Edit</a>";
+        $view .= "<a class='button-link' href='/expenses/index.php?action=del&id=" . urlencode($expense['expenseId']) . "' title='Click to delete'>Delete</a></div></div><hr>";
     }
     $view .= "</div>";
     return $view;

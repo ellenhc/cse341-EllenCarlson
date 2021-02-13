@@ -25,7 +25,7 @@
         </div>
         <div class="button-wrap">
             <?php
-            echo "<a class='button' href='/expenses/index.php?action=mod&id=" . urlencode($details['expenseId']) . "' title='Click to modify'>Edit</a>";
+            echo "<a class='button' href='/expenses/index.php?action=mod&id=" . urlencode($details['expenseId']) . "' title='Click to edit'>Edit</a>";
             echo "<a class='button' href='/expenses/index.php?action=del&id=" . urlencode($details['expenseId']) . "' title='Click to delete'>Delete</a>";
             ?>
         </div>

@@ -19,11 +19,15 @@ img {
 }
 
 input,
-.button {
+.button,
+.button-link {
     border: none;
 }
 
 .button {
     display: inline-block;
-    margin: 1.5rem 0;
+}
+
+.button-link {
+    display: inline-block;
 }

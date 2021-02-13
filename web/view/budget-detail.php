@@ -24,8 +24,10 @@
             } ?>
         </div>
         <div class="button-wrap">
-            <a class="button" href="/budgets/index.php?action=mod&id=${element.budgetId}">Edit</a>
-            <a class="button" href="/budgets/index.php?action=del&id=${element.budgetId}">Delete</a>
+            <?php
+            echo "<a class='button' href='/budgets/index.php?action=mod&id=" . urlencode($details['budgetId']) . "' title='Click to edit'>Edit</a>";
+            echo "<a class='button' href='/budgets/index.php?action=del&id=" . urlencode($details['budgetId']) . "' title='Click to delete'>Delete</a>";
+            ?>
         </div>
     </main>
     <footer>

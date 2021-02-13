@@ -27,16 +27,10 @@ if (!$_SESSION['loggedin']) {
                 ['Categories', 'Amount']
                 <?php
                 $remove = array("$", ",");
-                //$replace = str_replace($remove, "", $num);
                 foreach ($allExpenses as $expense) {
-                    if (!$expense[0]) {
-                        $num = $expense['sum'];
-                        $replace = str_replace($remove, "", $num);
-                        echo ", ['$expense[categoryName]', $replace]";
-                    } else {
-                        $num = $expense['sum'];
-                        echo "['$expense[categoryName]', $replace]";
-                    }
+                    $num = $expense['sum'];
+                    $replace = str_replace($remove, "", $num);
+                    echo ", ['$expense[categoryName]', $replace]";
                 }
                 ?>
             ]);
@@ -74,6 +68,7 @@ if (!$_SESSION['loggedin']) {
                 <h2>Recent Transactions</h2>
                 <?php if (isset($expensesList)) {
                     echo $expensesList;
+                    echo "<a class='button' href='/expenses/index.php?action=viewAll'>View All</a>";
                 } ?>
             </div>
             <div class="search">

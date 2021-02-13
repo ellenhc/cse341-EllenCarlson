@@ -1,4 +1,10 @@
-<!DOCTYPE html>
+<?php
+if (!$_SESSION['loggedin']) {
+    //if not logged in, send to main controller
+    header('Location: /index.php');
+    exit;
+}
+?><!DOCTYPE html>
 <html lang="en-US">
 
 <head>

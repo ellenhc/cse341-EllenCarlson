@@ -21,13 +21,17 @@ img {
 }
 
 input,
-.button {
+.button,
+.button-link {
   border: none;
 }
 
 .button {
   display: inline-block;
-  margin: 1.5rem 0;
+}
+
+.button-link {
+  display: inline-block;
 }
 
 html {
@@ -70,13 +74,15 @@ form a:hover {
 }
 
 input[type="submit"],
-.button {
+.button,
+.button-link {
   color: white;
   background-color: #73c259;
 }
 
 input[type="submit"]:hover,
-.button:hover {
+.button:hover,
+.button-link:hover {
   background-color: #5EB342;
 }
 
@@ -86,10 +92,6 @@ input[type="submit"]:hover,
 
 .expense-link .expense-date {
   color: #8F8F8F;
-}
-
-.expense-link:hover {
-  background-color: #F2F2F2;
 }
 
 .dashboard .piechart,
@@ -169,6 +171,97 @@ input[type="submit"],
   margin-top: 0.5rem;
 }
 
+.expense-link:hover {
+  font-weight: 700;
+}
+
+.header-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-container li {
+  border-bottom: 2px solid transparent;
+  margin-right: 1rem;
+}
+
+.set-width {
+  width: 98%;
+  margin: auto;
+}
+
+.button,
+.button-link {
+  padding: 10px 24px;
+  border-radius: 4px;
+}
+
+.home-div {
+  padding: 1rem 0;
+}
+
+.home-div h1 {
+  margin-bottom: 1rem;
+}
+
+.home-div button {
+  margin-top: 2rem;
+}
+
+.home-content .button {
+  margin: 1.5rem 0;
+}
+
+.banner,
+.sec-div {
+  padding: 1.5rem 0;
+}
+
+.expense-div,
+.budget-div {
+  padding: 1.5rem;
+}
+
+footer {
+  padding: 1rem;
+}
+
+.expense-list {
+  padding: 1.5rem 1rem;
+}
+
+.expense-list .expense-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 0;
+}
+
+.dash-wrapper > div,
+#piechart {
+  border-radius: 4px;
+}
+
+.dash-wrapper {
+  padding: 1.5rem 0;
+}
+
+.dash-wrapper .piechart,
+.dash-wrapper .recent-transactions {
+  padding: 1rem;
+}
+
+.button-wrap .button-link:first-child {
+  margin-right: 1rem;
+}
+
 @media screen and (min-width: 992px) {
   .set-width,
   .notice {
@@ -189,14 +282,6 @@ input[type="submit"],
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
-  }
-  .expense-card .expense-text {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .budget-text {
     display: -webkit-box;
@@ -227,75 +312,5 @@ input[type="submit"],
     -ms-grid-row: 2;
     grid-row: 2;
   }
-}
-
-.header-container ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.header-container li {
-  border-bottom: 2px solid transparent;
-  margin-right: 1rem;
-}
-
-.set-width {
-  width: 98%;
-  margin: auto;
-}
-
-.button {
-  padding: 10px 24px;
-  border-radius: 4px;
-}
-
-.home-div {
-  padding: 1rem 0;
-}
-
-.home-div h1 {
-  margin-bottom: 1rem;
-}
-
-.home-div button {
-  margin-top: 2rem;
-}
-
-.banner,
-.sec-div {
-  padding: 1.5rem 0;
-}
-
-.expense-div,
-.budget-div {
-  padding: 1.5rem;
-}
-
-footer {
-  padding: 1rem;
-}
-
-.expense-list {
-  padding: 1.5rem 1rem;
-}
-
-.expense-list .expense-card {
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.dash-wrapper > div,
-#piechart {
-  border-radius: 4px;
-}
-
-.dash-wrapper {
-  padding: 1.5rem 0;
-}
-
-.dash-wrapper .piechart,
-.dash-wrapper .recent-transactions {
-  padding: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

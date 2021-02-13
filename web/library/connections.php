@@ -22,11 +22,11 @@ function databaseConnect()
     }
 }
 function localConnect(){
-    $server = 'localhost';
-    $dbname = 'finanny';
-    $username = 'iClient';
-    $password = 'kqbSW8Mhjpp8uexd';
-    $dsn = "mysql:host=$server;dbname=$dbname";
+    $server = 'ec2-54-235-103-219.compute-1.amazonaws.com';
+    $dbname = 'dbvsvp5ro8o5sd';
+    $username = 'ovredkxecpwekg';
+    $password = '95ec4c02fa131b88b59e6af303a32af045ed83bb6287a7eb3d92c38668d3cfa0';
+    $dsn = "pgsql:host=$server;dbname=$dbname";
     $options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
     try {
