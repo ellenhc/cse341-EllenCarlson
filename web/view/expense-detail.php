@@ -25,8 +25,7 @@
         </div>
         <div class="button-wrap">
             <a class="button" href="/expenses/index.php?action=mod&id=${expenseId}" title="Click to modify">Edit</a>
-            <a class="button" href="/expenses/index.php?action=del&id=${details.expenseId}" title="Click to delete">Delete</a>
-            <!--<a class='button' href='/expenses/?action=details&id=".urlencode($details[expenseId])."'>Delete</a>-->
+            <a class="button" href="/expenses/index.php?action=del&id=<?php $details['expenseId']?>" title="Click to delete">Delete</a>
         </div>
     </main>
     <footer>
