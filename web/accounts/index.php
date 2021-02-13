@@ -114,6 +114,7 @@ switch ($action) {
         include '../index.php';
         break;
     default:
-        include '../view/500.php';
+        //include '../view/500.php';
+        include '../view/dashboard.php';
         break;
 }
