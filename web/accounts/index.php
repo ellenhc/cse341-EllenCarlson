@@ -100,6 +100,8 @@ switch ($action) {
 
         $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
         $userList = buildUserList($users); // Calls fxn to create a select for users
+        $expenseArray = populateRecentTransactions(7, $householdId); //Passes in 7 to get one week
+        $expensesList = listOfExpenses($expenseArray);
 
         include '../view/dashboard.php'; // Send them to dashboard view
         exit;

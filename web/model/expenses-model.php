@@ -67,6 +67,7 @@ function getOneExpense($expenseId){
     return $details[0];
 }
 
+// Returns data needed for the overview pie chart on dashboard
 function getExpenseOverview($householdId){
     $db = databaseConnect();
     $sql = 'SELECT categories."categoryName", grouped_expenses.*  FROM (
@@ -82,5 +83,34 @@ function getExpenseOverview($householdId){
     $sum = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $sum;
+}
+
+// Returns a week's worth of transactions from all users in a household
+function populateRecentTransactions($dateRange, $householdId){
+    $db = databaseConnect();
+
+    //default statement to pull EVERYTHING for a household
+    $sql = 'SELECT expenses.*, users."userFirstName", users."userLastName", categories."categoryName" FROM expenses INNER JOIN categories ON expenses."categoryId" = categories."categoryId"';
+    $sql .= ' INNER JOIN users ON expenses."userId" = users."userId" WHERE expenses."householdId" = :householdId';
+
+    if(!empty($dateRange)){
+        $sql .= ' AND "expenseDate" BETWEEN :startDate AND :endDate';
+    }
+   
+    $stmt = $db->prepare($sql);
+    
+    if(!empty($dateRange)){
+        $startDate = new DateTime();
+        $endData = new DateTime();
+        $startDate->modify("-$dateRange day");
+        $stmt->bindValue(':startDate', $startDate->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+        $stmt->bindValue(':endDate', $endData->format('Y-m-d H:i:s'), PDO::PARAM_STR);
+    }
+    $stmt->bindValue(':householdId', $householdId, PDO::PARAM_INT);
+
+    $stmt->execute();
+    $list = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $list;
 }
 ?>
