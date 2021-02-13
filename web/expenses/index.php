@@ -9,6 +9,7 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 require_once '../library/functions.php';
 require_once '../model/expenses-model.php';
+require_once '../model/accounts-model.php';
 
 // Gets data from main model to populate dropdowns in the search form
 $categories = getCategories(); // gets categories 
@@ -65,21 +66,30 @@ switch ($action){
         if ($deleteResult === 1){
             $message = "<p>Transaction was successfully deleted.</p>";
             $_SESSION['message'] = $message;
-            header('location: /view/expense-list.php'); // WANT TO SHOW DASHBOARD HERE
+            header('location: /expenses/index.php'); // WANT TO SHOW DASHBOARD HERE
             exit;
         }
         else {
             $message = "<p>Error: Transaction was unsuccessfully deleted.</p>";
             $_SESSION['message'] = $message;
-            header('location: /view/expense-list.php');
+            header('location: /expenses/index.php');
             exit;
         }
         break;
 
     default:
+        //$categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
+        //$userList = buildUserList($users); // Calls fxn to create a select for users
+        //include '../view/search.php';
+        $householdId = $_SESSION['userData']['householdId'];
+        $allExpenses = getExpenseOverview($householdId);
+
         $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
         $userList = buildUserList($users); // Calls fxn to create a select for users
-        include '../view/search.php';
+        $expenseArray = populateRecentTransactions(7, $householdId); //Passes in 7 to get one week
+        $expensesList = listOfExpenses($expenseArray);
+        include '../view/dashboard.php'; // Send them to dashboard view
+        exit;
         break;
 }
 ?>
