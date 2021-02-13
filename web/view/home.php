@@ -15,7 +15,7 @@
     </header>
     <main>
         <div class="home-div">
-            <div class="home-content">
+            <div class="home-content set-width">
                 <div>
                     <h1>Experience the easiest way to track your spending</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis est et sem porta vehicula. Morbi nibh elit, tempor vel sem et, aliquam porttitor tortor. Aenean porta mattis gravida.</p>
@@ -25,13 +25,13 @@
             </div>
         </div>
         <div class="banner">
-            <div class="banner-content">
+            <div class="banner-content set-width">
                 <h2>A second heading here</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis est et sem porta vehicula. Morbi nibh elit, tempor vel sem et, aliquam porttitor tortor.</p>
             </div>
         </div>
         <div class="sec-div">
-            <div class="sec-content">
+            <div class="sec-content set-width">
                 <h2>Finanny is loaded with free features</h2>
                 <div class="card-wrapper">
                     <div class="card">

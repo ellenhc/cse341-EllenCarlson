@@ -1,5 +1,5 @@
 <div class="header-container">
-    <div class="header-content">
+    <div class="header-content set-width">
         <ul>
             <li><a href="/index.php">Home</a></li>
             <?php

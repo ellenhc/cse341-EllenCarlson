@@ -1,15 +1,6 @@
 @media screen and (min-width: 992px) {
-    .header-content,
-    .home-content,
-    .banner-content,
-    .sec-content,
-    .footer-content,
-    .expense-div,
-    .budget-div,
-    .notice,
-    .dash-wrapper
-    /*form*/
-    {
+    .set-width,
+    .notice {
         width: 60%;
         margin: auto;
     }
@@ -37,12 +28,15 @@
     .dashboard {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
         grid-gap: 1.5rem;
         .piechart {
             grid-column: 1;
+            grid-row: 1;
         }
         .search {
             grid-column: 2;
+            grid-row: 1;
         }
         .recent-transactions {
             grid-column: 1;

@@ -64,7 +64,7 @@ if (!$_SESSION['loggedin']) {
             echo "<b>$message</b>";
         }
         ?>
-        <div class="dash-wrapper">
+        <div class="dash-wrapper set-width">
             <div class="piechart">
                 <h2>Recent...</h2>
                 <h5>Last 30 days</h5>

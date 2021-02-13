@@ -20,7 +20,7 @@ if (!$_SESSION['loggedin']){
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
     <main>
-        <form action="/expenses/index.php" method="post" class="search-form">
+        <form action="/expenses/index.php" method="post" class="search-form set-width">
             <h1>View Transactions</h1>
             <h3>Limit my search results by:</h3>
             <label for="expenseName">Name:</label>

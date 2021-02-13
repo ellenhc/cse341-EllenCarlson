@@ -20,7 +20,7 @@
             echo "<b>$message</b>";
         }
         ?>
-        <form action="/accounts/index.php" method="post" class="register-form">
+        <form action="/accounts/index.php" method="post" class="register-form set-width">
             <h1>Create an account</h1>
             <label for="fname">First name</label>
             <input type="text" id="fname" name="userFirstName" required>

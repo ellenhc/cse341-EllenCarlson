@@ -13,7 +13,7 @@
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
-    <main class="budget-div">
+    <main class="budget-div set-width">
         <h1>Budget Details</h1>
         <?php if (isset($message)) {
             echo $message;
