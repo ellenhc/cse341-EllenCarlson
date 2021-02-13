@@ -118,6 +118,13 @@ form select {
     display: -ms-flexbox;
     display: flex;
   }
+  .dashboard {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    grid-gap: 1.5rem;
+  }
 }
 
 * {

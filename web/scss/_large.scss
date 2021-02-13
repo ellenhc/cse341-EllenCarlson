@@ -33,4 +33,9 @@
     .budget-text {
         display: flex;
     }
+    .dashboard {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 1.5rem;
+    }
 }

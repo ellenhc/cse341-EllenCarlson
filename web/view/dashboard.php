@@ -58,7 +58,7 @@ if (!$_SESSION['loggedin']) {
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
-    <main>
+    <main class="dashboard">
         <?php
         if (isset($message)) {
             echo "<b>$message</b>";

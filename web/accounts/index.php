@@ -93,8 +93,13 @@ switch ($action) {
         $_SESSION['loggedin'] = TRUE;
         array_pop($userData); // Remove the password from the array
         $_SESSION['userData'] = $userData; // Store the array into the session
+
         $householdId = $_SESSION['userData']['householdId'];
         $allExpenses = getExpenseOverview($householdId);
+
+        $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
+        $userList = buildUserList($users); // Calls fxn to create a select for users
+
         include '../view/dashboard.php'; // Send them to dashboard view
         exit;
     case 'login':
