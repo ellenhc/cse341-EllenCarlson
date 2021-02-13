@@ -26,16 +26,16 @@ if (!$_SESSION['loggedin']) {
             var data = google.visualization.arrayToDataTable([
                 ['Categories', 'Amount']
                 <?php 
-                $fmt = new NumberFormatter( 'en_US', NumberFormatter::CURRENCY );
-                $curr = 'USD';
+                $remove = array("$", ",");
+                $replace = str_replace($remove, "", $num);
                 foreach($allExpenses as $expense){
                     if(!$expense[0]){
                         $num = $expense['sum'];
-                        echo ", ['$expense[categoryName]', $fmt->parseCurrency($num, $curr)]";
+                        echo ", ['$expense[categoryName]', $replace]";
                     }
                     else{
                         $num = $expense['sum'];
-                        echo "['$expense[categoryName]', $fmt->parseCurrency($num, $curr)]";
+                        echo "['$expense[categoryName]', $replace]";
                     }
                 }
                 ?>
