@@ -36,7 +36,7 @@ if (!$_SESSION['loggedin']) {
             ]);
 
             var options = {
-                title: 'My Monthly Spending',
+                //title: 'My Monthly Spending',
                 pieHole: 0.4,
                 colors: ['#73C259', '#3ABC66', '#00B573', '#00A58E', '#0093A2', '#007FAB', '#006AA8', '#005C8D', '#004D72', '#184B65']
             };
@@ -60,16 +60,18 @@ if (!$_SESSION['loggedin']) {
         ?>
         <div class="dash-wrapper set-width">
             <div class="piechart">
-                <h2>Recent...</h2>
-                <h5>Last 30 days</h5>
+                <h2>Spending</h2>
                 <div id="piechart"></div>
             </div>
             <div class="recent-transactions">
                 <h2>Recent Transactions</h2>
                 <?php if (isset($expensesList)) {
                     echo $expensesList;
-                    echo "<a class='button' href='/expenses/index.php?action=viewAll'>View All</a>";
                 } ?>
+                <div class="button-wrap">
+                    <a class='button' href='/expenses/index.php?action=viewAll'>View All</a>
+                    <a class='button' href='/expenses/index.php?action=add-view'>Add New</a>
+                </div>
             </div>
             <div class="search">
                 <form action="/expenses/index.php" method="post" class="search-form">

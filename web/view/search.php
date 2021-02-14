@@ -1,10 +1,11 @@
-<?php 
-if (!$_SESSION['loggedin']){
+<?php
+if (!$_SESSION['loggedin']) {
     //if not logged in, send to main controller
     header('Location: /index.php');
     exit;
 }
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -20,6 +21,11 @@ if (!$_SESSION['loggedin']){
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
     <main>
+        <?php
+        if (isset($message)) {
+            echo "<b>$message</b>";
+        }
+        ?>
         <form action="/expenses/index.php" method="post" class="search-form set-width">
             <h1>View Transactions</h1>
             <h3>Limit my search results by:</h3>

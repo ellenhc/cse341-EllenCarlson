@@ -57,6 +57,17 @@ switch ($action){
         break;
 
     case 'mod':
+        $expenseId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT); // Gets the id from the link
+        $expenseInfo = getOneExpense($expenseId);
+        if(count($expenseInfo)<1){
+            $message = "<p class='notice'>Sorry, no expense information could be found.</p>";
+        }
+        $categoryList = buildCategoryList($categories);
+        $userList = buildUserList($users);
+        include '../view/expense-update.php';
+        exit;
+    
+    case 'updateExpense':
         break;
 
     case 'del':
@@ -93,7 +104,35 @@ switch ($action){
         }
         include '../view/expense-list.php';
         break;
-
+    case 'addNew':
+        $expenseName = filter_input(INPUT_POST, 'expenseName', FILTER_SANITIZE_STRING);
+        $expensePrice = filter_input(INPUT_POST, 'expensePrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $expenseDate = filter_input(INPUT_POST, 'expenseDate', FILTER_SANITIZE_STRING);
+        $categoryId = filter_input(INPUT_POST, 'categoryId', FILTER_SANITIZE_NUMBER_INT);
+        $userId = $_SESSION['userData']['userId'];
+        $householdId = $_SESSION['userData']['householdId'];
+        if(empty($expenseName) || empty($expensePrice) || empty($expenseDate) || empty($categoryId)){
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            $categoryList = buildCategoryList($categories);
+            include '../view/add-expense.php';
+            exit;
+        }
+        $result = addNewExpense($expenseName, $expensePrice, $expenseDate, $categoryId, $userId, $householdId);
+        if($result ===1){
+            $message = "<p class='notice'>$expenseName transaction was added successfully.</p>";
+            header('location: /expenses/index.php');
+            exit;
+        } else{
+            $message = "<p class='notice'>$expenseName transaction failed to be added. Please try again.</p>";
+            $categoryList = buildCategoryList($categories);
+            include '../view/add-expense.php';
+            exit;
+        }
+        break;
+    case 'add-view':
+        $categoryList = buildCategoryList($categories);
+        include '../view/add-expense.php';
+        exit;
     default:
         $householdId = $_SESSION['userData']['householdId'];
         $allExpenses = getExpenseOverview($householdId);

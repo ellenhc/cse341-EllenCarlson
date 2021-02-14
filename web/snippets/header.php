@@ -6,7 +6,7 @@
             if (isset($_SESSION['loggedin'])) {
                 echo '<li><a href="/expenses/index.php">Dashboard</a></li>';
                 echo '<li><a href="/expenses/index.php?action=search">Search</a></li>';
-                echo '<li><a href="/budgets/index.php">Budgets</a></li>';
+                //echo '<li><a href="/budgets/index.php">Budgets</a></li>';
                 echo '<li><a href="/accounts/index.php?action=Logout">Sign Out</a></li>';
             } else {
                 echo '<li><a href="/accounts/index.php?action=login">Sign In</a></li>';

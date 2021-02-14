@@ -61,6 +61,7 @@ form {
 form input[type="email"],
 form input[type="password"],
 form input[type="text"],
+form input[type="date"],
 form select {
   background-color: #F2F2F2;
 }
@@ -96,7 +97,8 @@ input[type="submit"]:hover,
 
 .dashboard .piechart,
 .dashboard .search,
-.dashboard .recent-transactions {
+.dashboard .recent-transactions,
+.dashboard .add-form {
   background-color: white;
   -webkit-box-shadow: 3px 3px 10px 1px #8F8F8F;
           box-shadow: 3px 3px 10px 1px #8F8F8F;
@@ -258,7 +260,8 @@ footer {
   padding: 1rem;
 }
 
-.button-wrap .button-link:first-child {
+.button-wrap .button-link:first-child,
+.button-wrap .button:first-child {
   margin-right: 1rem;
 }
 
@@ -266,6 +269,7 @@ footer {
   .set-width,
   .notice {
     width: 60%;
+    margin: auto;
   }
   .home-content {
     display: -ms-grid;

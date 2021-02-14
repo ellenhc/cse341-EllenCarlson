@@ -78,7 +78,8 @@ footer {
 }
 
 .button-wrap {
-    .button-link:first-child {
+    .button-link:first-child,
+    .button:first-child {
         margin-right: 1rem;
     }
 }

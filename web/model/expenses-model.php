@@ -126,6 +126,24 @@ function populateRecentTransactions($dateRange, $householdId){
     return $list;
 }
 
+// Adds a NEW expense to the database
+function addNewExpense($expenseName, $expensePrice, $expenseDate, $categoryId, $userId, $householdId){
+    $db = databaseConnect();
+    $sql = 'INSERT INTO expenses("expenseName", "expensePrice", "expenseDate", "categoryId", "userId", "householdId") VALUES (:expenseName, :expensePrice, :expenseDate, :categoryId, :userId, :householdId)';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':expenseName', $expenseName, PDO::PARAM_STR);
+    $stmt->bindValue(':expensePrice', $expensePrice, PDO::PARAM_STR);
+    $stmt->bindValue(':expenseDate', $expenseDate, PDO::PARAM_STR);
+    $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
+    $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);
+    $stmt->bindValue(':householdId', $householdId, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
+
+// Deletes an expense from the database
 function deleteExpense($expenseId){
     $db = databaseConnect();
     $sql = 'DELETE FROM expenses WHERE "expenseId" = :expenseId';

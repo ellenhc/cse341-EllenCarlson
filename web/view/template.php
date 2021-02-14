@@ -14,6 +14,11 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
     <main>
+        <?php
+        if (isset($message)) {
+            echo "<b>$message</b>";
+        }
+        ?>
     </main>
     <footer>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/footer.php'; ?>
