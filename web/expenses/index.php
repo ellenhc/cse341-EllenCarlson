@@ -62,12 +62,39 @@ switch ($action){
         if(count($expenseInfo)<1){
             $message = "<p class='notice'>Sorry, no expense information could be found.</p>";
         }
-        $categoryList = buildCategoryList($categories);
-        $userList = buildUserList($users);
+        $categoryList = buildCategoryList($categories, $expenseInfo['categoryId']);
+        $userList = buildUserList($users, $expenseInfo['userId']);
         include '../view/expense-update.php';
         exit;
     
     case 'updateExpense':
+        $expenseName = filter_input(INPUT_POST, 'expenseName', FILTER_SANITIZE_STRING);
+        $expensePrice = filter_input(INPUT_POST, 'expensePrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+        $expenseDate = filter_input(INPUT_POST, 'expenseDate', FILTER_SANITIZE_NUMBER_INT);
+        $categoryId = filter_input(INPUT_POST, 'categoryId', FILTER_SANITIZE_NUMBER_INT); 
+        $userId = filter_input(INPUT_POST, 'userId', FILTER_SANITIZE_NUMBER_INT);
+        $expenseId = filter_input(INPUT_POST, 'expenseId', FILTER_SANITIZE_NUMBER_INT);
+        $householdId = $_SESSION['userData']['householdId'];
+        if(empty($expenseId) || empty($expenseName) || empty($expensePrice) || empty($expenseDate) || empty($categoryId) || empty($userId)){
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            $categoryList = buildCategoryList($categories, $expenseInfo['categoryId']);
+            $userList = buildUserList($users, $expenseInfo['userId']);
+            include '../view/expense-update.php';
+            exit;
+        }
+        $result = updateExpense($expenseId, $expenseName, $expensePrice, $expenseDate, $categoryId, $userId, $householdId);
+        if($result === 1){
+            $message = "<p class='notice'>was successfully updated.</p>";
+            header('location: /expenses/index.php');
+            exit;
+        }
+        else{
+            $message = "<p class='notice'>failed to update. Try again.</p>";
+            $categoryList = buildCategoryList($categories, $expenseInfo['categoryId']);
+            $userList = buildUserList($users, $expenseInfo['userId']);
+            include '../view/expense-update.php';
+            exit;
+        }
         break;
 
     case 'del':
@@ -88,8 +115,8 @@ switch ($action){
         break;
     
     case 'search':
-        $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
-        $userList = buildUserList($users); // Calls fxn to create a select for users
+        $categoryList = buildCategoryListSearch($categories); // Calls fxn to store results that will create a select list to be displayed
+        $userList = buildUserListSearch($users); // Calls fxn to create a select for users
         include '../view/search.php';
         break;
 
@@ -137,12 +164,11 @@ switch ($action){
         $householdId = $_SESSION['userData']['householdId'];
         $allExpenses = getExpenseOverview($householdId);
 
-        $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
-        $userList = buildUserList($users); // Calls fxn to create a select for users
+        $categoryList = buildCategoryListSearch($categories); // Calls fxn to store results that will create a select list to be displayed
+        $userList = buildUserListSearch($users); // Calls fxn to create a select for users
         $expenseArray = populateRecentTransactions(7, $householdId); //Passes in 7 to get one week
         $expensesList = listOfExpenses($expenseArray);
         include '../view/dashboard.php'; // Send them to dashboard view
         exit;
         break;
 }
-?>

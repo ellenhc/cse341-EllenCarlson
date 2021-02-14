@@ -58,7 +58,7 @@ switch ($action) {
 
         if ($regOutcome === 1) {
             setcookie('firstname', $userFirstName, strtotime('+1 year'), '/');
-            $_SESSION['message'] = "Thanks for registering $userFirstName. Please use your email and password to login.";
+            $message = "<p class='notice'>Thanks for registering $userFirstName. Please use your email and password to login.</p>";
             header('Location: /accounts/?action=login');
             exit;
         } else {
@@ -98,8 +98,8 @@ switch ($action) {
         $householdId = $_SESSION['userData']['householdId'];
         $allExpenses = getExpenseOverview($householdId);
 
-        $categoryList = buildCategoryList($categories); // Calls fxn to store results that will create a select list to be displayed
-        $userList = buildUserList($users); // Calls fxn to create a select for users
+        $categoryList = buildCategoryListSearch($categories); // Calls fxn to store results that will create a select list to be displayed
+        $userList = buildUserListSearch($users); // Calls fxn to create a select for users
         $expenseArray = populateRecentTransactions(7, $householdId); //Passes in 7 to get one week
         $expensesList = listOfExpenses($expenseArray);
 

@@ -154,4 +154,21 @@ function deleteExpense($expenseId){
     $stmt->closeCursor();
     return $rowsChanged;
 }
+
+function updateExpense($expenseId, $expenseName, $expensePrice, $expenseDate, $categoryId, $userId, $householdId){
+    $db = databaseConnect();
+    $sql = 'UPDATE expenses SET "expenseName" = :expenseName, "expensePrice" = :expensePrice, "expenseDate" = :expenseDate, "categoryId" = :categoryId, "userId" = :userId, "householdId" = :householdId WHERE "expenseId" = :expenseId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':expenseId', $expenseId, PDO::PARAM_INT);
+    $stmt->bindValue(':expenseName', $expenseName, PDO::PARAM_STR);
+    $stmt->bindValue(':expensePrice', $expensePrice, PDO::PARAM_STR);
+    $stmt->bindValue(':expenseDate', $expenseDate, PDO::PARAM_STR);
+    $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
+    $stmt->bindValue(':userId', $userId, PDO::PARAM_INT);
+    $stmt->bindValue(':householdId', $householdId, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
 ?>

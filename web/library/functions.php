@@ -4,8 +4,8 @@ function checkEmail($clientEmail){
     return $valEmail;
 }
 
-function buildCategoryList($categories){
-    $categoryList = '<select name="categoryId" id="categoryId" required>'; 
+function buildCategoryListSearch($categories){
+    $categoryList = '<select name="categoryId" id="categoryId">'; 
     $categoryList .= "<option selected>Any Category</option>"; 
     foreach ($categories as $category) { 
      $categoryList .= "<option value='$category[categoryId]'>$category[categoryName]</option>"; 
@@ -14,11 +14,45 @@ function buildCategoryList($categories){
     return $categoryList; 
 }
 
-function buildUserList($users){
-    $userList = '<select name="userId" id="userId" required>';
+// Creates dropdown selects for search forms
+function buildUserListSearch($users){
+    $userList = '<select name="userId" id="userId">';
     $userList .= "<option selected>Any Submitter</option>";
     foreach($users as $user){
         $userList .= "<option value='$user[userId]'>$user[userFirstName]</option>"; 
+    }
+    $userList .= '</select>'; 
+    return $userList;
+}
+
+// Creates dropdown selects for NON-search instances
+function buildCategoryList($categories, $categoryId = null){
+    $categoryList = '<select name="categoryId" id="categoryId" required>'; 
+    $categoryList .= "<option value='' disabled>Choose a category</option>"; 
+    foreach ($categories as $category) { 
+        $categoryList .= "<option value='$category[categoryId]'"; 
+        if(isset($categoryId)){
+            if($category['categoryId'] === $categoryId){
+                $categoryList .= ' selected ';
+            }
+        }
+        $categoryList .= ">$category[categoryName]</option>";
+    }
+    $categoryList .= '</select>'; 
+    return $categoryList; 
+}
+
+function buildUserList($users, $userId = null){
+    $userList = '<select name="userId" id="userId" required>';
+    $userList .= "<option value='' disabled>Choose a user</option>";
+    foreach($users as $user){
+        $userList .= "<option value='$user[userId]'"; 
+        if(isset($userId)){
+            if($user['userId'] === $userId){
+                $userList .= ' selected ';
+            }
+        }
+        $userList .= ">$user[userFirstName]</option>";
     }
     $userList .= '</select>'; 
     return $userList;
