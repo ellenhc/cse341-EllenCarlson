@@ -6,7 +6,7 @@ function searchExpenses($expenseName, $dateRange, $categoryId, $userId, $househo
 
     //default statement to pull EVERYTHING for a household
     $sql = 'SELECT expenses.*, users."userFirstName", users."userLastName", categories."categoryName" FROM expenses INNER JOIN categories ON expenses."categoryId" = categories."categoryId"';
-    $sql .= ' INNER JOIN users ON expenses."userId" = users."userId" WHERE expenses."householdId" = :householdId';
+    $sql .= ' INNER JOIN users ON expenses."userId" = users."userId" WHERE expenses."householdId" = :householdId ';
 
     if(!empty($expenseName)){
        // $sql .= ' AND "expenseName" LIKE :expenseName';
@@ -29,6 +29,7 @@ function searchExpenses($expenseName, $dateRange, $categoryId, $userId, $househo
     /*if(empty($householdId)){
         THROW AN ERROR IF IT IS EMPTY
     }*/
+    $sql .= ' ORDER BY expenses."expenseDate" DESC';
    
     $stmt = $db->prepare($sql);
     if(!empty($expenseName)){
