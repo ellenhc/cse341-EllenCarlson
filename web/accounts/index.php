@@ -86,7 +86,7 @@ switch ($action) {
         $hashCheck = password_verify($userPassword, $userData['userPassword']);
         // If hashes don't match, return user to login view
         if(!$hashCheck){
-            $message = '<p class="notice">Please check your password and try again.</p>';
+            $message = '<p class="notice">Invalid username or password. Please try again.</p>';
             include '../view/login.php';
             exit;
         }
