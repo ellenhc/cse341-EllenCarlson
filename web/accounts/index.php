@@ -50,23 +50,30 @@ switch ($action) {
             exit;
         }
 
-        // Hash the checked password
-        $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
+        // Check if password has at least 7 characters and a number
+        $checkPassword = checkPassword($userPassword);
+        if($checkPassword == 1){
+            // Hash the checked password
+            $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
 
-        // Send the data to the model
-        $regOutcome = registerUser($userFirstName, $userLastName, $userEmail, $householdId, $hashedPassword);
+            // Send the data to the model
+            $regOutcome = registerUser($userFirstName, $userLastName, $userEmail, $householdId, $hashedPassword);
 
-        if ($regOutcome === 1) {
-            setcookie('firstname', $userFirstName, strtotime('+1 year'), '/');
-            $message = "<p class='notice'>Thanks for registering $userFirstName. Please use your email and password to login.</p>";
-            header('Location: /accounts/?action=login');
-            exit;
-        } else {
-            $message = "<p class='notice'>Sorry $userFirstName, but the registration failed. Please try again.</p>";
+            if ($regOutcome === 1) {
+                setcookie('firstname', $userFirstName, strtotime('+1 year'), '/');
+                $message = "<p class='notice'>Thanks for registering $userFirstName. Please use your email and password to login.</p>";
+                header('Location: /accounts/?action=login');
+                exit;
+            } else {
+                $message = "<p class='notice'>Sorry $userFirstName, but the registration failed. Please try again.</p>";
+                include '../view/register.php';
+                exit;
+            }
+        } else{
+            $message = "<p class='notice'>Password needs to contain at least 7 digits and 1 number.</p>";
             include '../view/register.php';
             exit;
         }
-
         break;
     case 'Login':
         $userEmail = filter_input(INPUT_POST, 'userEmail', FILTER_SANITIZE_EMAIL);

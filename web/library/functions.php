@@ -4,6 +4,13 @@ function checkEmail($clientEmail){
     return $valEmail;
 }
 
+function checkPassword($userPassword) {
+    // Checks the password for a 7 character min, 1 capital letter, 1 number, 1 special character
+    $pattern = '/^(?=.*[[:digit:]])(?=.*[a-z])([^\s]){7,}$/';
+    // Returns 1 if they match. Returns 0 if they don't
+    return preg_match($pattern, $userPassword);
+}
+
 function buildCategoryListSearch($categories){
     $categoryList = '<select name="categoryId" id="categoryId">'; 
     $categoryList .= "<option selected>Any Category</option>"; 

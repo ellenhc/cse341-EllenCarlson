@@ -104,6 +104,10 @@ input[type="submit"]:hover,
           box-shadow: 3px 3px 10px 1px #8F8F8F;
 }
 
+.form-msg {
+  color: #8F8F8F;
+}
+
 form {
   padding: 1rem;
   margin: auto;
@@ -175,6 +179,11 @@ input[type="submit"],
 
 .expense-link:hover {
   font-weight: 700;
+}
+
+.form-msg {
+  font-size: smaller;
+  display: block;
 }
 
 .header-container ul {

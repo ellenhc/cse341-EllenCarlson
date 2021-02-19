@@ -14,13 +14,12 @@
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/snippets/header.php'; ?>
     </header>
     <main>
-        <?php
-        //Shows any messages that may need to be displayed. isset fxn tests the variable that is included as a parameter and returns T if the variable exists and has value other than
-        if (isset($message)) {
-            echo "<b>$message</b>";
-        }
-        ?>
         <form action="/accounts/index.php" method="post" class="register-form set-width">
+            <?php
+            if (isset($message)) {
+                echo "<b>$message</b>";
+            }
+            ?>
             <h1>Create an account</h1>
             <label for="fname">First name</label>
             <input type="text" id="fname" name="userFirstName" required>
@@ -29,7 +28,8 @@
             <label for="email">Email</label>
             <input type="email" id="email" name="userEmail" required>
             <label for="pwd">Password</label>
-            <input type="password" id="pwd" name="userPassword" required>
+            <span class="form-msg">Password must contain at least 7 characters and include 1 number.</span>
+            <input type="password" id="pwd" name="userPassword" pattern="(?=^.{7,}$)(?=.*\d)(?=.*[a-z]).*$" required>
             <input type="submit" name="submit" value="Register">
             <!--The action key-value pair-->
             <input type="hidden" name="action" value="Register">

@@ -37,22 +37,22 @@
                     <div class="card">
                         <img src="/images/house.png" alt="Illustration of a white house on a blue background">
                         <h4>Manage Households</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Households allow you to track spending and set budgets grouped as family units.</p>
                     </div>
                     <div class="card">
                         <img src="/images/receipt.png" alt="Illustration of a receipt on a green background">
                         <h4>Log Expenses</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Keep track of transactions to quickly see & analyze where your money goes.</p>
                     </div>
                     <div class="card">
                         <img src="/images/savings.png" alt="Illustration of money with an upwards arrow">
                         <h4>Increase Savings</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Stay on top of your spending and set goals that help you increase your savings.</p>
                     </div>
                     <div class="card">
                         <img src="/images/budget.png" alt="Illustration of a calculator">
                         <h4>Create Budgets</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p>Customizable budgets allow you to easily add and update spending categories.</p>
                     </div>
                 </div>
             </div>
