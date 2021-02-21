@@ -33,6 +33,7 @@
             <input type="submit" name="submit" value="Register">
             <!--The action key-value pair-->
             <input type="hidden" name="action" value="Register">
+            <p class="message">Already have an account? <a href="/accounts/index.php?action=login">Log in</a></p>
         </form>
     </main>
     <footer>
