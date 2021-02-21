@@ -18,12 +18,12 @@ function searchExpenses($expenseName, $dateRange, $categoryId, $userId, $househo
     }
 
     if(!empty($categoryId)){
-       $sql .= ' AND "categoryId" = :categoryId';
+       $sql .= ' AND expenses."categoryId" = :categoryId';
        
     }
 
     if(!empty($userId)){
-        $sql .= ' AND "userId" = :userId';
+        $sql .= ' AND expenses."userId" = :userId';
     }
 
     /*if(empty($householdId)){
